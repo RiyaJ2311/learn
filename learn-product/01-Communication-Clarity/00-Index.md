@@ -170,6 +170,16 @@ After mastering Communication Clarity, move to `02-Data-Storytelling/` to apply 
 
 ---
 
+## Cross-References
+
+| Use With | When |
+|----------|------|
+| [02-Baseline-First](../02-Data-Storytelling/02-Baseline-First.md) | Presenting numbers |
+| [01-Permissionless](../03-Ownership-Execution/01-Permissionless.md) | Sharing updates publicly |
+| [02-Impact-Selling](../05-Leadership-Trust/02-Impact-Selling.md) | Communicating wins |
+
+---
+
 ## Start Here
 
 **Go to:** `01-Answer-First.md`

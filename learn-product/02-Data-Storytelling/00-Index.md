@@ -222,4 +222,14 @@ After mastering Data Storytelling, move to `03-Ownership-Execution/` to learn ho
 
 ---
 
+## Cross-References
+
+| Use With | When |
+|----------|------|
+| [02-Impact-Translation](../01-Communication-Clarity/02-Impact-Translation.md) | Presenting data insights |
+| [03-PRD-Quality](../04-Product-Strategy/03-PRD-Quality.md) | Writing metrics sections |
+| [02-Metric-Ownership](../03-Ownership-Execution/02-Metric-Ownership.md) | Tracking metrics weekly |
+
+---
+
 **Remember:** One data point is a story. Multiple data points are truth. The funnel shows you where to focus.

@@ -198,4 +198,14 @@ Before building anything, ask:
 
 ---
 
+## Cross-References
+
+| Use With | When |
+|----------|------|
+| [02-Baseline-First](../02-Data-Storytelling/02-Baseline-First.md) | Writing metrics sections |
+| [01-Data-Triangulation](../02-Data-Storytelling/01-Data-Triangulation.md) | Validating problem data |
+| [01-Answer-First](../01-Communication-Clarity/01-Answer-First.md) | Presenting PRDs |
+
+---
+
 **Remember:** Strategy is working backwards from customer value.

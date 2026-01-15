@@ -193,4 +193,14 @@ Before and after every milestone, ask:
 
 ---
 
+## Cross-References
+
+| Use With | When |
+|----------|------|
+| [02-Impact-Translation](../01-Communication-Clarity/02-Impact-Translation.md) | Translating wins to impact |
+| [01-Permissionless](../03-Ownership-Execution/01-Permissionless.md) | Sharing wins publicly |
+| [02-Baseline-First](../02-Data-Storytelling/02-Baseline-First.md) | Showing before/after impact |
+
+---
+
 **Remember:** Trust compounds when you deliver and communicate consistently.

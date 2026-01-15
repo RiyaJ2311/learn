@@ -507,3 +507,158 @@ Cut out and keep at your desk:
 ---
 
 **Remember:** These questions are training wheels. Use them until they become automatic.
+
+---
+
+## Thinking Patterns (Module 7)
+
+### Q23: What would have to be true for this to work?
+**Theme:** First Principles Thinking
+**Framework:** Assumption Audit
+**When to use:** Before any major decision or strategy
+
+**What it means:** Identify the assumptions underlying your decision. If those assumptions are wrong, the decision is wrong.
+
+**How to apply:**
+1. List your key assumptions
+2. Rate confidence in each
+3. Identify which, if wrong, would change the decision
+4. Test the riskiest assumption first
+
+---
+
+### Q24: How could this fail spectacularly?
+**Theme:** Inversion / Pre-Mortem
+**Framework:** Inversion Thinking
+**When to use:** Before launches, major decisions, new initiatives
+
+**What it means:** Imagine failure, then work backwards to prevent it. This surfaces risks optimism hides.
+
+**How to apply:**
+1. Imagine it's 3 months later and this failed badly
+2. Write down all the reasons it failed
+3. Prioritize the most likely/impactful
+4. Create mitigation for top 3
+
+---
+
+### Q25: And then what happens?
+**Theme:** Second-Order Thinking
+**Framework:** Consequence Chains
+**When to use:** Before any decision with ripple effects
+
+**What it means:** Consider the consequences of consequences. Most decisions have second and third-order effects that aren't immediately obvious.
+
+**How to apply:**
+1. State the first-order effect
+2. Ask "And then what?" for each effect
+3. Repeat 3-4 times
+4. Check for unintended consequences
+
+---
+
+### Q26: What am I not seeing?
+**Theme:** Cognitive Bias Awareness
+**Framework:** Bias Check
+**When to use:** When you feel certain about something
+
+**What it means:** The moment you're most confident is often when you're most at risk of bias. This question creates space for doubt.
+
+**How to apply:**
+1. Ask what evidence would change your mind
+2. Consider who might disagree and why
+3. Check for confirmation bias
+4. Seek disconfirming evidence
+
+---
+
+### Q27: What's the bottleneck in this system?
+**Theme:** Systems Thinking
+**Framework:** Constraint Analysis
+**When to use:** When analyzing funnels, processes, or growth
+
+**What it means:** Every system has a constraint that limits overall performance. Find it, and you find the highest-leverage intervention point.
+
+**How to apply:**
+1. Map the system (elements, connections)
+2. Find where flow is restricted
+3. Focus improvement on the constraint
+4. After fixing, find the new constraint
+
+---
+
+### Q28: Is this reversible?
+**Theme:** Decision Quality
+**Framework:** Reversibility Test
+**When to use:** When deciding how much rigor to apply
+
+**What it means:** Reversible decisions deserve less deliberation than irreversible ones. Match your effort to the stakes.
+
+**How to apply:**
+1. Rate reversibility: Easy / Hard / Impossible
+2. Easy → Decide fast, learn from results
+3. Hard → Careful analysis, get input
+4. Impossible → Maximum rigor, sleep on it
+
+---
+
+### Q29: Would I still do this if I hadn't already started?
+**Theme:** Sunk Cost Awareness
+**Framework:** Fresh Eyes Test
+**When to use:** When continuing a struggling project or feature
+
+**What it means:** Past investment is irrelevant to future decisions. Only future value matters.
+
+**How to apply:**
+1. Imagine you're starting fresh today
+2. With current knowledge, would you start this?
+3. If no, consider stopping regardless of past investment
+4. If yes, continue with confidence
+
+---
+
+## Quick Reference: Thinking Patterns by Context
+
+### Before Making Major Decisions
+- **Q23:** What would have to be true?
+- **Q28:** Is this reversible?
+- **Q29:** Would I start this fresh?
+
+### Before Launches
+- **Q24:** How could this fail?
+- **Q25:** And then what happens?
+
+### When Analyzing Systems
+- **Q27:** What's the bottleneck?
+- **Q25:** And then what? (second-order effects)
+
+### When Feeling Certain
+- **Q26:** What am I not seeing?
+- **Q23:** What are my assumptions?
+
+---
+
+## Updated Daily Lens Rotation
+
+| Day | Question | Focus |
+|-----|----------|-------|
+| Monday | Q1 | Answer First |
+| Tuesday | Q2 | Impact Translation |
+| Wednesday | Q8 | Permissionless |
+| Thursday | Q4-6 | Data Triangulation |
+| Friday | Q3, Q18 | Self-Grade + Impact |
+| **Weekend Focus** | **Q23-29** | **Thinking Patterns** |
+
+---
+
+## The Complete Question Count
+
+- **Communication:** Q1-Q3 (3 questions)
+- **Data Storytelling:** Q4-Q7 (4 questions)
+- **Ownership:** Q8-Q12 (5 questions)
+- **Strategy:** Q13-Q17 (5 questions)
+- **Leadership:** Q18 + Guardrails (3 questions)
+- **PLG:** Q19-Q22 (4 questions)
+- **Thinking Patterns:** Q23-Q29 (7 questions)
+
+**Total: 29 Core Questions**

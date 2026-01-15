@@ -1,197 +1,166 @@
-# PM Mastery System
+# Why This Exists
 
-A structured learning system for becoming a world-class IC Product Manager, built from real feedback patterns and frameworks from top product leaders.
-
----
-
-## What is This?
-
-This is a **personalized PM development system** designed from:
-- **Real feedback patterns** from manager reviews and 1:1s
-- **Proven frameworks** from Lenny's Podcast guests (Ian McAllister, Shaun Clowes, Jackie Bavaro)
-- **Actionable questions** to build muscle memory for PM excellence
-
-### Why This Exists
-
-Most PM advice is generic. This system is built from **your actual feedback themes** mapped to **battle-tested frameworks** from PMs at Amazon, Atlassian, Confluent, Airbnb, and more.
+This is my personal system for becoming the PM I want to be.
 
 ---
 
-## Repository Structure
+## The Problem I'm Solving
+
+I've received feedback. Good feedback. The kind that stings because it's true. Patterns emerged:
+
+- **I bury the answer.** I give context when people want conclusions.
+- **I present data without meaning.** Numbers without the "so what?"
+- **I wait for permission.** When I should just act.
+- **I think inside-out.** Starting from what we're building, not what customers need.
+
+These aren't character flaws. They're habits. And habits can be rewired.
+
+---
+
+## What I'm Building Here
+
+This isn't a course to complete. It's a system to practice.
+
+**The goal:** Make excellent PM thinking automatic. Not something I have to remember, but something I just *do*.
+
+I've taken frameworks from PMs I admire—people at Amazon, Atlassian, Uber, Airbnb—and turned them into questions I ask myself daily. Questions like:
+
+- Did I answer the actual question first?
+- What does this data *mean* for what we should do?
+- Am I waiting for permission I don't actually need?
+- Have I talked to a real customer about this problem?
+
+When I ask these questions enough, they become instinct.
+
+---
+
+## The Core Shifts I'm Working On
+
+### 1. Communication: Answer First, Context Second
+Stop making people dig for the point. Lead with the conclusion. "We should do X because Y" not "Let me walk you through the data..."
+
+### 2. Data: From Numbers to Decisions
+Data isn't impressive by itself. The question is always: "So what? What should we do differently?"
+
+### 3. Ownership: Act Like the CEO of My Metrics
+Don't ask "Can I do this?" Ask "Why haven't I done this already?" Take ownership of outcomes, not just tasks.
+
+### 4. Strategy: Start with the Customer, Not the Solution
+Spend more time understanding the problem than building the solution. Talk to users. Look at competitors. Think outside-in.
+
+### 5. Trust: Earn It Through Consistency
+Trust isn't given, it's built. Through follow-through, through impact, through being the person who makes things happen.
+
+---
+
+## How I'll Use This
+
+**Before meetings:** Glance at the relevant questions. Prime my brain.
+
+**After communication:** Grade myself. Did the message land? What would I do differently?
+
+**Weekly:** Reflect on what worked, what didn't. Adjust.
+
+**When I get feedback:** Map it back to these frameworks. Find the pattern. Practice the fix.
+
+---
+
+## The Bet I'm Making
+
+If I practice these patterns consistently for months, they'll become automatic. I won't have to *think* about answering first—I'll just do it. I won't have to *remind* myself to ask "so what?"—it'll be my default.
+
+That's the bet. Deliberate practice → unconscious competence.
+
+---
+
+## Reminder to Myself
+
+This isn't about being perfect. It's about being better than yesterday.
+
+The feedback I've received is a gift. It shows me exactly where to focus. Most people never get this clarity.
+
+Now I just have to do the work.
+
+---
+
+*Built from real feedback and frameworks from Ian McAllister, Shaun Clowes, Jackie Bavaro, and others who've figured this out.*
+
+---
+
+## Quick Navigation
+
+| Need | Go To |
+|------|-------|
+| One-page cheatsheet | [CHEATSHEET.md](CHEATSHEET.md) |
+| My priority themes | [feedback-vault/themes-summary.md](feedback-vault/themes-summary.md) |
+| Practice scenarios | [tests/scenario-exercises.md](tests/scenario-exercises.md) |
+| Weekly rituals | [00-Start-Here/02-Weekly-Rituals.md](00-Start-Here/02-Weekly-Rituals.md) |
+
+---
+
+## Structure at a Glance
+
 ```
-learn-product/
-├── README.md                      # You are here
-├── 00-Start-Here/                 # Orientation & self-assessment
-│   ├── 00-Index.md                # Complete learning roadmap
-│   ├── 01-Your-Feedback-Map.md    # Your themes → frameworks mapping
-│   └── 02-Weekly-Rituals.md       # Daily/weekly practice habits
-│
-├── 01-Communication-Clarity/      # "Answer the damn question"
-│   ├── 00-Index.md                # Module overview
-│   ├── 01-Answer-First.md         # Ian McAllister's BLUF framework
-│   ├── 02-Impact-Translation.md   # Data → "So what?" → Action
-│   ├── 03-Self-Grading.md         # Communication feedback loops
-│   └── QUICK-REFERENCE.md         # Quick reference cheat sheet
-│
-├── 02-Data-Storytelling/          # "Data is a compass, not GPS"
-│   ├── 00-Index.md                # Module overview
-│   ├── 01-Data-Triangulation.md   # Upstream/downstream analysis
-│   ├── 02-Baseline-First.md       # No docs without baselines
-│   └── 03-Cohort-Analysis.md      # Shaun Clowes' approach
-│
-├── 03-Ownership-Execution/        # "Permissionless execution"
-│   ├── 00-Index.md                # Module overview
-│   ├── 01-Permissionless.md       # Decide without asking
-│   ├── 02-Metric-Ownership.md     # Weekly dashboard habits
-│   └── 03-Verification-Habits.md  # Check experiments are live
-│
-├── 04-Product-Strategy/           # "Working backwards"
-│   ├── 00-Index.md                # Module overview
-│   ├── 01-Working-Backwards.md    # Amazon PR/FAQ method
-│   ├── 02-Outside-In-Thinking.md  # 80% time outside building
-│   ├── 03-PRD-Quality.md          # Problem paragraph first
-│   ├── 04-PLG-Fundamentals.md     # Product-led growth fundamentals
-│   ├── 05-Activation.md           # Activation metrics and experiments
-│   └── 06-PLG-Sales-Hybrid.md     # Hybrid PLG + sales motion
-│
-├── 05-Leadership-Trust/           # "Trust is the currency"
-│   ├── 00-Index.md                # Module overview
-│   ├── 01-Earn-Trust.md           # Building stakeholder trust
-│   ├── 02-Impact-Selling.md       # Make wins stick
-│   └── 03-Goal-Adaptability.md    # Pivot when metrics change
-│
-├── 06-Product-Led-Growth/         # "Products that sell themselves"
-│   ├── 00-Index.md                # Module overview
-│   ├── 01-PLG-Fundamentals.md     # PLG basics & advantages
-│   ├── 02-Growth-Funnel.md        # Full funnel metrics
-│   ├── 03-Activation-Time-to-Value.md  # Activation moments
-│   ├── 04-Retention-Engagement.md # Cohort retention
-│   ├── 05-Experimentation-System.md    # Systematic experiments
-│   └── 06-PLG-Sales-Hybrid.md     # PLG + Sales integration
-│
-├── tests/                         # Self-assessments
-│   ├── weekly-reflection.md       # Weekly self-check template
-│   └── [dated test files]         # Your completed assessments
-│
-├── templates/                     # Ready-to-use templates
-│   ├── communication-template.md  # Pre/post communication checklist
-│   ├── data-analysis-template.md  # Data analysis structure
-│   └── prd-template.md            # PRD structure
-│
-├── frameworks/                    # Reference frameworks
-│   ├── lenny-podcast-wisdom.md    # Key quotes & frameworks
-│   └── question-bank.md           # All 18 reflection questions
-│
-└── feedback-vault/                # Your feedback history
-    ├── themes-summary.md          # Aggregated feedback themes
-    └── [imported feedback]        # Historical feedback data
+CHEATSHEET.md              ← Print this
+00-Start-Here/             ← Orientation + rituals
+01-Communication-Clarity/  ← Answer first, impact translation
+02-Data-Storytelling/      ← Triangulation, baselines, cohorts
+03-Ownership-Execution/    ← Permissionless, metric ownership
+04-Product-Strategy/       ← PRDs, outside-in, PLG
+05-Leadership-Trust/       ← Impact selling, trust
+07-Thinking-Patterns/      ← Mental models (reference)
+feedback-vault/            ← My feedback themes
+templates/                 ← PRD, data, comms
+tests/                     ← Exercises + reflections
 ```
 
 ---
 
-## Learning Paths
+## Cross-Reference (What Goes Together)
 
-### Path 1: Quick Wins (2 weeks)
-Focus on immediate behavior changes:
-1. **Week 1:** Communication Clarity (Answer First)
-2. **Week 2:** Ownership (Permissionless Execution)
+### Writing PRDs
+- [03-PRD-Quality](04-Product-Strategy/03-PRD-Quality.md) + [02-Baseline-First](02-Data-Storytelling/02-Baseline-First.md) + [02-Outside-In-Thinking](04-Product-Strategy/02-Outside-In-Thinking.md)
 
-### Path 2: Deep Dive (8 weeks)
-Comprehensive skill building:
-1. **Weeks 1-2:** Communication Clarity
-2. **Weeks 3-4:** Data Storytelling
-3. **Weeks 5-6:** Product Strategy + Leadership
-4. **Weeks 7-8:** Product-Led Growth (PLG)
+### Presenting Data
+- [01-Data-Triangulation](02-Data-Storytelling/01-Data-Triangulation.md) + [02-Baseline-First](02-Data-Storytelling/02-Baseline-First.md) + [02-Impact-Translation](01-Communication-Clarity/02-Impact-Translation.md)
 
-### Path 3: Feedback-Driven (Ongoing)
-Based on your specific feedback themes:
-- See `00-Start-Here/01-Your-Feedback-Map.md` for personalized recommendations
+### Sharing Updates
+- [01-Answer-First](01-Communication-Clarity/01-Answer-First.md) + [01-Permissionless](03-Ownership-Execution/01-Permissionless.md) + [02-Impact-Selling](05-Leadership-Trust/02-Impact-Selling.md)
+
+### Tracking Metrics
+- [02-Metric-Ownership](03-Ownership-Execution/02-Metric-Ownership.md) + [01-Data-Triangulation](02-Data-Storytelling/01-Data-Triangulation.md) + [03-Cohort-Analysis](02-Data-Storytelling/03-Cohort-Analysis.md)
 
 ---
 
-## How to Use This System
+## Priority Files (Based on My Feedback)
 
-### Daily Practice (5 mins)
-Before any meeting or communication:
-- Review 1 question from the relevant module
-- Apply it consciously
-- Note the result
-
-### Weekly Ritual (30 mins)
-Every Friday:
-1. Complete `tests/weekly-reflection.md`
-2. Grade your week's communications
-3. Identify one focus area for next week
-
-### Monthly Review (1 hour)
-First Monday of each month:
-1. Review your test history
-2. Update your feedback themes
-3. Adjust learning priorities
+| # | Theme | Key File |
+|---|-------|----------|
+| 1 | Communication | [01-Answer-First](01-Communication-Clarity/01-Answer-First.md) |
+| 2 | Data | [02-Baseline-First](02-Data-Storytelling/02-Baseline-First.md) |
+| 3 | Ownership | [01-Permissionless](03-Ownership-Execution/01-Permissionless.md) |
+| 4 | PRDs | [03-PRD-Quality](04-Product-Strategy/03-PRD-Quality.md) |
+| 5 | Impact | [02-Impact-Selling](05-Leadership-Trust/02-Impact-Selling.md) |
+| 6 | Thinking | [01-First-Principles](07-Thinking-Patterns/01-First-Principles.md) |
 
 ---
 
-## Quick Reference: The 18 Core Questions
+## Thinking Patterns (Meta-Skill)
 
-### Communication
-- [ ] Did I answer the EXACT question first?
-- [ ] Did I say "This means..." and "So we should..."?
-- [ ] Did the message land? (Self-grade)
+These mental models apply to everything above:
 
-### Data
-- [ ] What happened upstream/downstream of this data?
-- [ ] What's the metric one level up?
-- [ ] Do I have baseline metrics?
-
-### Ownership
-- [ ] Am I waiting for permission unnecessarily?
-- [ ] Can I post this publicly without asking?
-- [ ] What would I do as CEO of this metric?
-
-### Strategy
-- [ ] What does the customer actually experience?
-- [ ] What are competitors doing?
-- [ ] Have I verified this problem exists in the wild?
-
-### PRD Quality
-- [ ] Does this have a clear PROBLEM paragraph?
-- [ ] Controllable vs track-only metrics?
-- [ ] What are the guardrails?
-
-### Leadership
-- [ ] Did I sell impact in stakeholder language?
-- [ ] Have I repeated this win enough to stick?
-
-### PLG (Product-Led Growth)
-- [ ] Can I define my activation metric precisely?
-- [ ] Am I reviewing funnel metrics weekly?
-- [ ] Are experiments systematic, not random?
-- [ ] Can I explain retention cohort by cohort?
+| Pattern | Use When | Key Question |
+|---------|----------|--------------|
+| [First Principles](07-Thinking-Patterns/01-First-Principles.md) | Stuck on a problem | "What would have to be true?" |
+| [Pre-Mortems](07-Thinking-Patterns/02-Inversion-Pre-Mortems.md) | Before any launch | "How could this fail?" |
+| [Second-Order](07-Thinking-Patterns/03-Second-Order-Thinking.md) | Making decisions | "And then what?" |
+| [Systems](07-Thinking-Patterns/04-Systems-Thinking.md) | Analyzing growth | "What's the bottleneck?" |
+| [Biases](07-Thinking-Patterns/05-Cognitive-Biases.md) | Feeling certain | "What am I not seeing?" |
+| [Decisions](07-Thinking-Patterns/06-Decision-Frameworks.md) | Choosing approaches | "Is this reversible?" |
+| [Anti-Patterns](07-Thinking-Patterns/07-Anti-Patterns.md) | Self-check | "Am I falling into a trap?" |
 
 ---
 
-## Source Frameworks
+## How Modules Connect
 
-This system is built on frameworks from:
-
-| Person | Role | Key Framework |
-|--------|------|---------------|
-| **Ian McAllister** | Dir PM @ Uber, ex-Amazon | Answer First, Working Backwards, Earn Trust |
-| **Shaun Clowes** | CPO @ Confluent, ex-Atlassian | Data Triangulation, Outside-In Thinking, 80% Rule, PLG Maturity Phases |
-| **Jackie Bavaro** | Author, ex-Asana/Google | Strategy as Reliable Value, Solutions as Problems |
-
----
-
-## Getting Started
-
-1. **Start here:** `00-Start-Here/00-Index.md`
-2. **Map your gaps:** `00-Start-Here/01-Your-Feedback-Map.md`
-3. **Pick a module:** Based on your most urgent feedback theme
-4. **Practice daily:** Use the questions before meetings
-5. **Test weekly:** Complete the Friday reflection
-
----
-
-**Built for:** World-class IC Product Management
-**Based on:** Real feedback + Lenny Podcast frameworks
-**Goal:** Consistent, repeatable PM excellence
+See [Module Integration Map](frameworks/module-integration-map.md) for how skills build on each other.

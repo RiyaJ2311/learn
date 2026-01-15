@@ -272,17 +272,43 @@ Attach PM practices to existing habits:
 
 ---
 
+## Thinking Patterns Practice
+
+### Weekly Thinking Audit
+
+Add this to your Friday reflection:
+
+| Question | This Week |
+|----------|-----------|
+| What major decision did I make? | ___ |
+| What mental model did I use? | ___ |
+| What bias might have affected me? | ___ |
+| Did I ask "And then what?" enough? | Y/N |
+| Did I run a pre-mortem? | Y/N |
+
+### Thinking Pattern Questions to Add
+
+| Day | Add This Lens |
+|-----|---------------|
+| Monday | "What would have to be true for this to work?" |
+| Tuesday | "How could this fail?" |
+| Wednesday | "And then what happens?" |
+| Thursday | "What am I not seeing?" |
+| Friday | "What's the bottleneck?" |
+
+---
+
 ## Tracking Progress Over Time
 
 ### Weekly Score Tracking
 
 ```
-Week | Comm | Data | Own | PRD | Impact | Focus
------|------|------|-----|-----|--------|------
-W1   | __/5 | __/5 | __/5| __/5| __/5   | [theme]
-W2   | __/5 | __/5 | __/5| __/5| __/5   | [theme]
-W3   | __/5 | __/5 | __/5| __/5| __/5   | [theme]
-W4   | __/5 | __/5 | __/5| __/5| __/5   | [theme]
+Week | Comm | Data | Own | PRD | Impact | Think | Focus
+-----|------|------|-----|-----|--------|-------|------
+W1   | __/5 | __/5 | __/5| __/5| __/5   | __/5  | [theme]
+W2   | __/5 | __/5 | __/5| __/5| __/5   | __/5  | [theme]
+W3   | __/5 | __/5 | __/5| __/5| __/5   | __/5  | [theme]
+W4   | __/5 | __/5 | __/5| __/5| __/5   | __/5  | [theme]
 ```
 
 ### Monthly Trend
@@ -318,6 +344,24 @@ If scores aren't improving after 4 weeks:
 2. The baseline (vs what?)
 3. The meaning (this means...)
 4. The action (so we should...)
+
+### "I feel certain about this decision" - Pause and:
+1. Ask "What would prove me wrong?"
+2. Check for confirmation bias
+3. Consider what you might not be seeing
+4. Get a second opinion
+
+### "I'm about to launch something" - Run:
+1. Quick pre-mortem: "How could this fail?"
+2. List top 3 failure modes
+3. Create mitigation for each
+4. Then proceed with confidence
+
+### "I'm stuck on a problem" - Try:
+1. First principles: What do we know for certain?
+2. Inversion: What would guarantee failure?
+3. Systems: What's the real bottleneck?
+4. Fresh eyes: How would a newcomer see this?
 
 ---
 

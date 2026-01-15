@@ -1,6 +1,6 @@
-# Feedback Themes Summary
+# My 2025 Feedback Themes
 
-Aggregated feedback themes from Akash and Puru reviews and 1:1s.
+Aggregated feedback from Akash and Puru — reviews and 1:1s from early 2025.
 
 ---
 
@@ -229,7 +229,7 @@ Completing work and moving on without ensuring stakeholders remember the impact.
 
 ## Tracking Improvement
 
-### January 2024 Focus
+### January 2025 Focus
 1. Communication Clarity — Answer first in every message
 2. Data Storytelling — Baseline check before any doc
 3. Metric Ownership — Weekly dashboard habit
@@ -248,7 +248,7 @@ Completing work and moving on without ensuring stakeholders remember the impact.
 
 ## Monthly Review Template
 
-**Month:** January 2024
+**Month:** January 2025
 
 **Themes Improved:**
 - [List themes that improved]

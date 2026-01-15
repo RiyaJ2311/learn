@@ -199,4 +199,14 @@ Before any decision or action, ask:
 
 ---
 
+## Cross-References
+
+| Use With | When |
+|----------|------|
+| [01-Answer-First](../01-Communication-Clarity/01-Answer-First.md) | Sharing updates publicly |
+| [02-Baseline-First](../02-Data-Storytelling/02-Baseline-First.md) | Tracking metrics |
+| [02-Impact-Selling](../05-Leadership-Trust/02-Impact-Selling.md) | Selling your wins |
+
+---
+
 **Remember:** Permissionless execution builds trust. Trust enables impact.
