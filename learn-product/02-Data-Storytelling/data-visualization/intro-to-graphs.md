@@ -1,10 +1,10 @@
 # Graphs & Dashboard Design: A Product Perspective
 
-A comprehensive guide for PMs and Designers on data visualization — from understanding why graphs exist to designing dashboards that drive decisions.
+A comprehensive guide for PMs and Designers on data visualization - from understanding why graphs exist to designing dashboards that drive decisions.
 
 ---
 
-## Part 1: The Origin of Graphs — Why Were They Invented?
+## Part 1: The Origin of Graphs - Why Were They Invented?
 
 ### The Father of Data Visualization: William Playfair (1759-1823)
 
@@ -22,7 +22,7 @@ Playfair's core insight was simple but revolutionary:
 
 > "As the knowledge of mankind increases, and transactions multiply, it becomes more and more desirable to abbreviate and facilitate the modes of conveying information."
 
-His graphs were designed **"to save time for men of rank or active business"** — responding to information overload even in the 1700s.
+His graphs were designed **"to save time for men of rank or active business"** - responding to information overload even in the 1700s.
 
 #### The Accidental Invention of the Bar Chart
 
@@ -35,7 +35,7 @@ This teaches us an important lesson: **constraints drive innovation in visualiza
 
 #### Influences
 
-Joseph Priestley's timeline charts (1765) — which used bars to show human lifespans — likely inspired Playfair. He was described as "an intellectual remixer, taking bits and pieces of different people's ideas and piecing them together into useful wholes."
+Joseph Priestley's timeline charts (1765) - which used bars to show human lifespans - likely inspired Playfair. He was described as "an intellectual remixer, taking bits and pieces of different people's ideas and piecing them together into useful wholes."
 
 ---
 
@@ -52,7 +52,7 @@ In 1858, nurse Florence Nightingale used an inventive **polar area graph** (some
 
 **The shocking insight**: Far more soldiers were dying from **preventable diseases** than from battle wounds.
 
-**The impact**: This visualization helped drive major healthcare reforms. It wasn't just data — it was a **data story** that changed minds and saved lives.
+**The impact**: This visualization helped drive major healthcare reforms. It wasn't just data - it was a **data story** that changed minds and saved lives.
 
 > This is the essence of data storytelling: using a graph to deliver a clear message and influence decisions.
 
@@ -62,31 +62,17 @@ In 1858, nurse Florence Nightingale used an inventive **polar area graph** (some
 
 ### Graphs Are Essential in Data Storytelling
 
-As a PM or Designer, you're constantly making decisions and convincing stakeholders. Graphs are your most powerful tool because they reveal:
+As a PM or Designer, you're constantly making decisions and convincing stakeholders. Graphs are your most powerful tool because they:
 
-| What Graphs Reveal | Why It Matters for Product |
-|-------------------|---------------------------|
-| **Trends** | Is our feature adoption growing or declining? |
-| **Patterns** | When do users engage most? What behavior cycles exist? |
-| **Outliers** | Which users behave differently? What's broken? |
-| **Comparisons** | How does cohort A perform vs cohort B? |
-
-### Graphs Connect with Intuition
-
-Numbers require mental processing. Graphs bypass this by speaking directly to our visual intuition:
-- A rising [line](./graph-types/line-chart.md) *feels* like growth
-- A large [slice](./graph-types/pie-chart.md) *feels* dominant
-- A gap *feels* like a problem
-
-### Graphs Make Data Memorable and Engaging
-
-Research shows people remember visual information far better than numerical tables. When presenting to stakeholders:
-- Tables inform → Graphs **persuade**
-- Numbers state → Graphs **convince**
-
-### Graphs Prevent Manipulation
-
-Well-designed graphs make it harder to cherry-pick data or hide inconvenient truths. A complete visualization tells the whole story — good and bad.
+| What Graphs Do | Why It Matters for Product | Example |
+|----------------|---------------------------|---------|
+| **Reveal Trends** | Is our feature adoption growing or declining? | Rising [line](./graph-types/line-chart.md) shows clear growth trajectory |
+| **Show Patterns** | When do users engage most? What behavior cycles exist? | Usage spikes every Monday morning |
+| **Highlight Outliers** | Which users behave differently? What's broken? | One segment churns at 80% vs 10% average |
+| **Enable Comparisons** | How does cohort A perform vs cohort B? | Jan signups retain 2× better than Dec |
+| **Connect with Intuition** | Visual = instant understanding vs mental math | A gap *feels* like a problem, a spike *feels* urgent |
+| **Improve Memory** | People remember visuals 6× better than numbers | Stakeholders recall the chart, not the spreadsheet |
+| **Prevent Manipulation** | Complete picture = harder to cherry-pick data | Full timeline shows both wins and losses |
 
 ---
 
@@ -94,18 +80,15 @@ Well-designed graphs make it harder to cherry-pick data or hide inconvenient tru
 
 ### Definition
 
-A dashboard is a **combination of graphs designed to explain a complete point** — giving viewers an at-a-glance understanding of a situation so they can make decisions quickly.
+A dashboard is a **combination of graphs designed to explain a complete point** - giving viewers an at-a-glance understanding of a situation so they can make decisions quickly.
 
 ### Everyday Dashboard Examples
 
 You use dashboards daily without thinking about them:
 
-| Example | Information Displayed | Decisions Enabled |
-|---------|----------------------|-------------------|
-| **Car dashboard** | Speed, fuel, engine temp, warnings | How fast to go, when to refuel, when to stop |
-| **Phone battery** | Percentage, charging status | When to charge, which apps to close |
-| **Fitness tracker** | Steps, heart rate, calories | Whether to exercise more today |
-| **Weather app** | Temperature, rain probability, forecast | What to wear, whether to carry umbrella |
+| **Car Dashboard** | **Phone Battery** | **Fitness Tracker** | **Weather App** |
+|-------------------|-------------------|---------------------|-----------------|
+| Speed, fuel, temp → Refuel? Stop? | % charged → Charge now? Close apps? | Steps, heart rate → Exercise more? | Temp, rain % → Jacket? Umbrella? |
 
 ### The Three Questions Every Dashboard Should Answer
 
@@ -128,7 +111,7 @@ Most dashboards only answer #1. Great dashboards guide users through all three.
 | **Learning Curve** | Moderate (Excel familiarity helps) | Steep (requires dedicated training) | LookML is powerful but hard to learn |
 | **Key Strength** | Drag-and-drop interface; seamless Microsoft integration | Unmatched flexibility; highest visualization quality | Single source of truth via LookML; real-time data |
 | **Key Limitation** | Struggles with multi-step data modeling; confusing licensing | Steep learning curve | Basic out-of-the-box charts; poor for ad-hoc exploration |
-| **Design Flexibility** | Good templates, limited custom design | Excellent — full control over every visual element | Limited — strength is consistency, not creativity |
+| **Design Flexibility** | Good templates, limited custom design | Excellent - full control over every visual element | Limited - strength is consistency, not creativity |
 
 ### Other Tools Worth Knowing
 
@@ -147,7 +130,7 @@ Most dashboards only answer #1. Great dashboards guide users through all three.
 ### 1. Cluttered Dashboard
 **Problem**: Too many charts, metrics everywhere, no breathing room
 **Impact**: Users feel overwhelmed, miss key insights, stop using the dashboard
-**Fix**: Apply the 80/20 rule — show only the 20% of metrics that drive 80% of decisions
+**Fix**: Apply the 80/20 rule - show only the 20% of metrics that drive 80% of decisions
 
 ### 2. Poor Layout & No Visual Hierarchy
 **Problem**: Everything looks equally important; no clear entry point
@@ -177,7 +160,7 @@ Most dashboards only answer #1. Great dashboards guide users through all three.
 
 ### 6. Lack of Clear Takeaway or Next Steps
 **Problem**: Dashboard shows data but doesn't guide action
-**Impact**: "So what?" — users see numbers but don't know what to do
+**Impact**: "So what?" - users see numbers but don't know what to do
 **Fix**: Include annotations, benchmarks, targets, and recommended actions
 
 ---
@@ -190,12 +173,19 @@ Click on any graph type to dive into the detailed guide:
 
 | Graph Type | Best For | Questions It Answers | Key Characteristics | Common Mistakes |
 |------------|----------|---------------------|---------------------|-----------------|
+| **[KPI Card](./graph-types/kpi-card.md)** | Single metric spotlight | What's the current value? Is it good or bad? | Large number + delta + context | Too many cards; no comparison; missing units |
 | **[Bar Chart](./graph-types/bar-chart.md)** | Comparing categories | Which is biggest? How do groups compare? | Bars start at zero; horizontal or vertical | Bars not starting at zero; too many bars; poor ordering |
+| **[Grouped Bar](./graph-types/grouped-bar.md)** | Side-by-side comparison within categories | How do sub-groups differ across categories? | 2-4 groups per category | Too many groups (5+); poor color coding |
+| **[Stacked Bar](./graph-types/stacked-bar.md)** | Total + composition | What's the total AND how is it split? | Shows both absolute values and parts | Comparing middle segments; too many categories |
 | **[Line Chart](./graph-types/line-chart.md)** | Change over time | Is it growing? What's the trend? When did change happen? | Connected points; continuous x-axis | Dual y-axes; truncated axes; too many lines |
+| **[Area Chart](./graph-types/area-chart.md)** | Volume over time | How has total changed? How do parts contribute? | Filled space below line; stacked or overlapping | Overlapping areas hiding data; too many series |
 | **[Pie Chart](./graph-types/pie-chart.md)** | Part-to-whole (simple) | What proportion is each part? | Slices sum to 100%; best with 2-5 slices | Too many slices; 3D effects; similar-sized slices |
 | **[Scatter Plot](./graph-types/scatter-plot.md)** | Correlation between variables | Is there a relationship? Are there outliers? | Each point = one observation; two axes | Overplotting; no trendline when needed |
-| **[Area Chart](./graph-types/area-chart.md)** | Volume over time | How has total changed? How do parts contribute? | Filled space below line; stacked or overlapping | Overlapping areas hiding data; too many series |
 | **[Histogram](./graph-types/histogram.md)** | Distribution | What's the shape? Where's the center? How spread? | Bars touch; x-axis is continuous | Confusing with bar chart; wrong bin sizes |
+| **[Funnel Chart](./graph-types/funnel.md)** | Sequential conversion | Where do users drop off? | Ordered steps; shows % at each stage | Steps not sequential; no drop-off highlighting |
+| **[Table](./graph-types/table.md)** | Exact values + drill-down | Show me the exact numbers | Search, sort, export; detailed data | Too many columns; placed above charts |
+| **[Heatmap](./graph-types/heatmap.md)** | Patterns and intensity | When/where is activity concentrated? | Color shows intensity; 2D grid | Too many colors; no legend; wrong color scale |
+| **[Cohort/Retention](./graph-types/cohort-retention.md)** | User retention over time | Do users come back after Day 1, 7, 30? | Cohorts × time periods; % + absolute numbers | Comparing different-sized cohorts; no absolute values |
 
 ### Detailed Subpages
 
@@ -274,9 +264,9 @@ Every data story combines:
 
 ---
 
-## Part 9: Dashboard Personas — Design for Your Audience
+## Part 9: Dashboard Personas - Design for Your Audience
 
-Different people in your organization need completely different dashboards. An executive dashboard looks nothing like an analytics dashboard — and shouldn't.
+Different people in your organization need completely different dashboards. An executive dashboard looks nothing like an analytics dashboard - and shouldn't.
 
 Before you start designing, answer: **"Who is this for?"**
 
@@ -293,17 +283,17 @@ Before you start designing, answer: **"Who is this for?"**
 | **[Analysts](#analysts)** | 30+ minutes | As-needed | Why did this happen? |
 | **[Customers (External)](#customers)** | 1-2 minutes | Daily/Weekly | Am I getting value? |
 
-→ **[Complete Dashboard Personas Guide](./dashboard-personas.md)** — Deep dive into each audience with examples, questions they ask, charts they use, and design vibe.
+→ **[Complete Dashboard Personas Guide](./dashboard-personas.md)** - Deep dive into each audience with examples, questions they ask, charts they use, and design vibe.
 
 ### Quick Decision Tree
 
 **Is your audience trying to...**
 
-- **Make strategic decisions?** → Strategic dashboard (executives) — Very simple, few charts
-- **Decide what to work on next?** → Tactical dashboard (heads of functions) — KPIs + drivers
-- **Diagnose problems?** → Analytical dashboard (PMs, designers) — Lots of filters + drill-downs
-- **Take action right now?** → Operational dashboard (ops, support) — Fast, alerts, minimal thinking
-- **Discover insights?** → Intelligence dashboard (analysts) — Unlimited complexity, all dimensions
+- **Make strategic decisions?** → Strategic dashboard (executives) - Very simple, few charts
+- **Decide what to work on next?** → Tactical dashboard (heads of functions) - KPIs + drivers
+- **Diagnose problems?** → Analytical dashboard (PMs, designers) - Lots of filters + drill-downs
+- **Take action right now?** → Operational dashboard (ops, support) - Fast, alerts, minimal thinking
+- **Discover insights?** → Intelligence dashboard (analysts) - Unlimited complexity, all dimensions
 
 Each type uses different charts, different update speeds, and different visual designs.
 
