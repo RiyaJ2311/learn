@@ -54,9 +54,11 @@ This is your path from Level 1 to Level 4.
 
 **Intro to AI?** Start with [00-AI-Fundamentals/00-Index.md](00-AI-Fundamentals/00-Index.md)
 
-**AI agents introb?** Jump to [03-AI-Agents/00-Index.md](03-AI-Agents/00-Index.md)
+**AI agents intro?** Jump to [03-AI-Agents/00-Index.md](03-AI-Agents/00-Index.md)
 
 **Want to build something?** Go to [04-Building-Agents/00-Index.md](04-Building-Agents/00-Index.md)
+
+**Need definitions?** Check the [GLOSSARY.md](GLOSSARY.md) for all key terms
 
 ---
 

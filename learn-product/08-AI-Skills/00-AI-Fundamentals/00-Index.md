@@ -35,7 +35,7 @@ Both are wrong. The truth is more interesting and more useful.
 
 | Part | Title            | What to Focus On                             |
 | ---- | ---------------- | -------------------------------------------- |
-| 01   | What is AI?      | AI vs ML vs LLMs—demystifying the buzzwords |
+| 01   | What is AI?      | AI vs ML vs LLMs- demystifying the buzzwords |
 | 02   | How LLMs Work    | The actual mechanism behind ChatGPT/Claude   |
 | 03   | Tokens & Context | The economics and constraints of AI          |
 | 04   | Prompting Basics | Why your words matter so much                |
@@ -48,19 +48,19 @@ Think of an LLM like this:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ THE LLM MENTAL MODEL                                         │
+│ THE LLM MENTAL MODEL                                        │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  INPUT                    PROCESS                 OUTPUT    │
 │  ──────                   ───────                 ──────    │
 │                                                             │
-│  "What is the     →   [Predicts most    →   "The capital   │
-│   capital of           likely next           of France     │
-│   France?"             word, again           is Paris."    │
-│                        and again]                          │
+│  "What is the     →   [Predicts most    →   "The capital    │
+│   capital of           likely next           of France      │
+│   France?"             word, again           is Paris."     │
+│                        and again]                           │
 │                                                             │
-│  KEY INSIGHT: LLMs don't "know" things.                    │
-│  They predict what text should come next based on          │
+│  KEY INSIGHT: LLMs don't "know" things.                     │
+│  They predict what text should come next based on           │
 │  patterns learned from training data.                       │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
@@ -78,13 +78,13 @@ This simple model explains:
 
 ### AI vs ML vs LLM
 
-| Term                    | What It Means                                | Example                       |
-| ----------------------- | -------------------------------------------- | ----------------------------- |
-| **AI**            | Broad field of making machines "intelligent" | Everything below              |
-| **ML**            | Machines learning patterns from data         | Spam filters, recommendations |
-| **Deep Learning** | ML using neural networks with many layers    | Image recognition             |
-| **LLM**           | Large Language Model—deep learning for text | ChatGPT, Claude               |
-| **GenAI**         | AI that generates new content                | LLMs, DALL-E, Midjourney      |
+| Term                    | What It Means                                   | Example                       |
+| ----------------------- | ----------------------------------------------- | ----------------------------- |
+| **AI**            | Broad field of making machines "intelligent"    | Everything below              |
+| **ML**            | Machines learning patterns from data            | Spam filters, recommendations |
+| **Deep Learning** | ML using neural networks with many layers       | Image recognition             |
+| **LLM**           | Large Language Model are deep learning for text | ChatGPT, Claude               |
+| **GenAI**         | AI that generates new content                   | LLMs, DALL-E, Midjourney      |
 
 ### Key Terms to Remember
 
@@ -93,7 +93,7 @@ This simple model explains:
 - **Prompt:** Your instructions to the AI
 - **Hallucination:** When AI confidently says something false
 - **Fine-tuning:** Customizing a model for specific tasks
-- **RAG:** Retrieval Augmented Generation—giving AI access to your data
+- **RAG:** Retrieval Augmented Generation for giving AI access to your data
 
 ---
 
