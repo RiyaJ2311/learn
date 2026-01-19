@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-A **subagent** is an agent spawned by another agent to handle a specific subtask. Think of it as delegation—the main agent recognizes it needs specialized help and creates a focused agent to handle that part, then continues with the results.
+A **subagent** is an agent spawned by another agent to handle a specific subtask. Think of it as delegation, the main agent recognizes it needs specialized help and creates a focused agent to handle that part, then continues with the results.
 
 **Remember:** Subagents let agents decompose complex problems without losing focus or filling up their context window.
 
@@ -29,7 +29,7 @@ A **subagent** is an agent spawned by another agent to handle a specific subtask
 │  • Parent decides when delegation helps                    │
 │  • Dynamic, flexible composition                            │
 │                                                             │
-│  KEY DIFFERENCE:                                            │
+│  KEY DIFFERENCE:                                           │
 │  Multi-agent = pre-built team                               │
 │  Subagents = hire specialists as needed                    │
 │                                                             │
@@ -99,7 +99,7 @@ A **subagent** is an agent spawned by another agent to handle a specific subtask
 │     │ Task: "Fix the authentication test failure"      │    │
 │     │ Context: Test file, auth module, error message   │    │
 │     │                                                  │    │
-│     │ Subagent actions:                                │    │
+│     │ Subagent actions:                               │    │
 │     │ • Reads test file                               │    │
 │     │ • Reads auth module                             │    │
 │     │ • Identifies the bug                            │    │
@@ -137,12 +137,12 @@ A **subagent** is an agent spawned by another agent to handle a specific subtask
 │ CONTEXT EFFICIENCY                                           │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  WITHOUT SUBAGENTS:                                         │
-│  Parent keeps everything in context:                        │
+│  WITHOUT SUBAGENTS:                                        │
+│  Parent keeps everything in context:                       │
 │  [Task] + [File1] + [File2] + [File3] + [All results] +... │
 │  → Context fills up, performance degrades                   │
 │                                                             │
-│  WITH SUBAGENTS:                                            │
+│  WITH SUBAGENTS:                                           │
 │  Parent context: [Task] + [High-level progress]            │
 │  Subagent 1: [Subtask1] + [File1] (then terminates)       │
 │  Subagent 2: [Subtask2] + [File2] (then terminates)       │
@@ -177,15 +177,15 @@ async def analyze_codebase(files):
 │                                                             │
 │  Parent: "Build this feature"                              │
 │                                                             │
-│  Subagent A (Research):                                    │
+│  Subagent A (Research):                                   │
 │  • System prompt: "You are a research specialist..."       │
 │  • Tools: web_search, read_documentation                   │
 │                                                             │
-│  Subagent B (Coding):                                      │
+│  Subagent B (Coding):                                     │
 │  • System prompt: "You are an expert programmer..."        │
 │  • Tools: read_file, write_file, run_tests                │
 │                                                             │
-│  Subagent C (Testing):                                     │
+│  Subagent C (Testing):                                    │
 │  • System prompt: "You are a QA specialist..."             │
 │  • Tools: run_tests, read_coverage, write_test            │
 │                                                             │
@@ -320,14 +320,14 @@ def spawn_subagent(type, task, context):
 │ PARENT → SUBAGENT HANDOFF                                    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  INCLUDE:                                                   │
+│  INCLUDE:                                                  │
 │  ✓ Clear task description                                  │
 │  ✓ Relevant context (not everything!)                      │
 │  ✓ Expected output format                                  │
 │  ✓ Constraints or requirements                             │
 │  ✓ How result will be used                                 │
 │                                                             │
-│  DON'T INCLUDE:                                             │
+│  DON'T INCLUDE:                                            │
 │  ✗ Full parent conversation history                        │
 │  ✗ Unrelated context                                       │
 │  ✗ Implementation details parent will handle               │
@@ -342,13 +342,13 @@ def spawn_subagent(type, task, context):
 │ SUBAGENT → PARENT RETURN                                     │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  INCLUDE:                                                   │
+│  INCLUDE:                                                  │
 │  ✓ Task result/answer                                      │
 │  ✓ Summary of approach taken                               │
 │  ✓ Key findings or learnings                               │
 │  ✓ Any warnings or caveats                                 │
 │                                                             │
-│  OPTIONAL:                                                  │
+│  OPTIONAL:                                                 │
 │  • Detailed execution log (if needed for debugging)        │
 │  • Intermediate artifacts (if parent needs them)           │
 │                                                             │
@@ -432,12 +432,12 @@ subagent = Agent(
 
 ## Things to Remember
 
-1. **Subagents = on-demand delegation** — Created when needed, not predefined
-2. **Benefits: context, parallelization, specialization** — Focused agents are effective
-3. **Pass minimal context** — Only what the subagent needs
-4. **Return summarized results** — Don't pollute parent's context
-5. **Use appropriate models** — Match power to task complexity
-6. **Set limits** — Iterations, tokens, time
+1. **Subagents = on-demand delegation** : Created when needed, not predefined
+2. **Benefits: context, parallelization, specialization** : Focused agents are effective
+3. **Pass minimal context** : Only what the subagent needs
+4. **Return summarized results** : Don't pollute parent's context
+5. **Use appropriate models** : Match power to task complexity
+6. **Set limits** : Iterations, tokens, time
 
 ---
 
@@ -467,4 +467,4 @@ Subagent 3:
 
 ---
 
-**Next Module:** [../04-Building-Agents/00-Index.md](../04-Building-Agents/00-Index.md) — Hands-on guide to building agents
+**Next Module:** [../04-Building-Agents/00-Index.md](../04-Building-Agents/00-Index.md) : Hands-on guide to building agents

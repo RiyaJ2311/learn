@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-The most important AI skill isn't prompt engineering or knowing the latest models. It's knowing **when NOT to use AI**. This module teaches you the decision framework for choosing between traditional code/rules and AI—potentially saving you months of wasted effort.
+The most important AI skill isn't prompt engineering or knowing the latest models. It's knowing **when NOT to use AI**. This module teaches you the decision framework for choosing between traditional code/rules and AI, potentially saving you months of wasted effort.
 
 **Your Context:** AI is exciting, but not every problem needs it. In fact, many AI projects fail because AI was the wrong solution.
 
@@ -21,13 +21,13 @@ The #1 mistake companies make with AI:
 │                                                             │
 │  "When you have a hammer, everything looks like a nail"     │
 │                                                             │
-│  ❌ Common pattern:                                         │
+│  ❌ Common pattern:                                        │
 │     1. Team gets excited about AI                           │
 │     2. Builds complex AI solution                           │
 │     3. Realizes simple rules would have worked              │
 │     4. Months wasted, budget blown                          │
 │                                                             │
-│  ✅ Better pattern:                                         │
+│  ✅ Better pattern:                                        │
 │     1. Define the problem clearly                           │
 │     2. Ask: "Would simple rules work?"                      │
 │     3. If yes: Use rules                                    │
@@ -89,7 +89,7 @@ Ask yourself these questions:
 
 ## The Spectrum
 
-It's not always either/or—there's a spectrum:
+It's not always either/or, there's a spectrum:
 
 ```
 RULES                              HYBRID                              AI
@@ -101,7 +101,7 @@ RULES                              HYBRID                              AI
  • Explicit logic                  • Rules for action              • Pattern recognition
  • Speed critical                  • Best of both                  • Creative tasks
 
- Examples:                         Examples:                        Examples:
+ Examples:                        Examples:                       Examples:
  • Tax calculation                 • Smart routing                 • Content generation
  • Form validation                 • Intent + action               • Sentiment analysis
  • Data transformation             • Triage + workflow             • Code generation

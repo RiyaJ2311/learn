@@ -2,9 +2,9 @@
 
 ## Quick Take
 
-The way you talk to AI dramatically affects what you get back. This chapter covers the foundational principles of prompting—the skill that separates mediocre AI results from excellent ones.
+The way you talk to AI dramatically affects what you get back. This chapter covers the foundational principles of prompting, the skill that separates mediocre AI results from excellent ones.
 
-**Remember:** Prompting is about reducing ambiguity and providing context. The AI fills in gaps with assumptions—better prompts mean fewer wrong assumptions.
+**Remember:** Prompting is about reducing ambiguity and providing context. The AI fills in gaps with assumptions. better prompts mean fewer wrong assumptions.
 
 ---
 
@@ -17,14 +17,14 @@ Same question, different prompts, vastly different results:
 │ PROMPT QUALITY COMPARISON                                    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  ❌ VAGUE PROMPT:                                           │
+│  ❌ VAGUE PROMPT:                                          │
 │  "Write about dogs"                                         │
 │                                                             │
 │  → Generic 500-word essay about dogs as pets                │
 │                                                             │
 │  ──────────────────────────────────────────────────────     │
 │                                                             │
-│  ✅ SPECIFIC PROMPT:                                        │
+│  ✅ SPECIFIC PROMPT:                                       │
 │  "Write a 100-word product description for a premium dog    │
 │   food brand targeting health-conscious pet owners. Focus   │
 │   on natural ingredients and digestive health benefits.     │
@@ -103,11 +103,11 @@ Use this structure for consistent results:
 │                                                             │
 │  [FORMAT] Format your response as [structure].              │
 │                                                             │
-│  [CONSTRAINTS] Requirements:                                │
+│  [CONSTRAINTS] Requirements:                               │
 │  - [Constraint 1]                                           │
 │  - [Constraint 2]                                           │
 │                                                             │
-│  [INPUT] Here's the input to work with:                    │
+│  [INPUT] Here's the input to work with:                   │
 │  [Your content]                                             │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
@@ -302,7 +302,7 @@ Prompt 1: "Write a product announcement"
 Prompt 2: "Make it more casual and exciting"
 → Too casual
 
-Prompt 3: "Find a middle ground—professional but energetic"
+Prompt 3: "Find a middle ground, professional but energetic"
 → Perfect
 ```
 
@@ -372,7 +372,7 @@ Good prompting is iterative:
 │          │                                                   │
 │          ▼                                                   │
 │     ┌─────────────┐      ┌──────────────┐                  │
-│     │  Evaluate:  │──────▶│   Perfect?   │                 │
+│     │  Evaluate: │──────▶│   Perfect?   │                 │
 │     │  What's     │      │   Done!      │                   │
 │     │  missing?   │      └──────────────┘                  │
 │     └──────┬──────┘                                         │
@@ -416,7 +416,7 @@ Good prompting is iterative:
 │  ✓ Ask for step-by-step reasoning                          │
 │  ✓ Iterate and refine                                       │
 │                                                             │
-│  AVOID:                                                     │
+│  AVOID:                                                    │
 │  ✗ Vague instructions                                       │
 │  ✗ Missing context                                          │
 │  ✗ Too many competing requirements                          │
@@ -429,11 +429,11 @@ Good prompting is iterative:
 
 ## Things to Remember
 
-1. **Specificity wins**—vague prompts get vague results
-2. **Context is everything**—AI fills gaps with assumptions
-3. **Format matters**—tell the AI exactly how to structure output
-4. **Examples teach**—show, don't just tell
-5. **Iterate always**—prompting is a conversation, not a command
+1. **Specificity wins**, vague prompts get vague results
+2. **Context is everything**: AI fills gaps with assumptions
+3. **Format matters**, tell the AI exactly how to structure output
+4. **Examples teach**, show, don't just tell
+5. **Iterate always**, prompting is a conversation, not a command
 
 ---
 
@@ -473,4 +473,4 @@ Requirements:
 
 ---
 
-**Next Module:** [../01-Rules-vs-AI/00-Index.md](../01-Rules-vs-AI/00-Index.md) — When to use AI vs simple rules
+**Next Module:** [../01-Rules-vs-AI/00-Index.md](../01-Rules-vs-AI/00-Index.md) : When to use AI vs simple rules

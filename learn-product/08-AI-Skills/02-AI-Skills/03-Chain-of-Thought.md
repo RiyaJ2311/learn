@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-Humans solve complex problems by thinking step-by-step. AI can too—if you ask it correctly. **Chain-of-thought (CoT)** prompting makes AI show its reasoning, leading to better answers and explainable decisions.
+Humans solve complex problems by thinking step-by-step. AI can too, if you ask it correctly. **Chain-of-thought (CoT)** prompting makes AI show its reasoning, leading to better answers and explainable decisions.
 
 **Remember:** Asking AI to "think step by step" dramatically improves performance on complex tasks.
 
@@ -23,7 +23,7 @@ Humans solve complex problems by thinking step-by-step. AI can too—if you ask 
 │                                                             │
 │  AI: "11"                                                   │
 │                                                             │
-│  Problems:                                                  │
+│  Problems:                                                 │
 │  - We don't know if it reasoned correctly                  │
 │  - Hard to debug if wrong                                   │
 │  - AI might skip steps and make errors                     │
@@ -39,7 +39,7 @@ Humans solve complex problems by thinking step-by-step. AI can too—if you ask 
 │          tennis balls does he have now?                     │
 │          Let's think step by step."                        │
 │                                                             │
-│  AI: "Let me work through this step by step:               │
+│  AI: "Let me work through this step by step:              │
 │       1. Roger starts with 5 tennis balls                  │
 │       2. He buys 2 cans of tennis balls                    │
 │       3. Each can contains 3 balls, so 2 × 3 = 6 new balls│
@@ -47,7 +47,7 @@ Humans solve complex problems by thinking step-by-step. AI can too—if you ask 
 │                                                             │
 │       Roger has 11 tennis balls."                          │
 │                                                             │
-│  Benefits:                                                  │
+│  Benefits:                                                 │
 │  - We can verify each step                                 │
 │  - Errors are visible and debuggable                       │
 │  - AI is more accurate with explicit reasoning             │
@@ -150,8 +150,8 @@ Problem: [Your problem]
 │                                                             │
 │  Instead of: "Approved" / "Denied"                         │
 │                                                             │
-│  With CoT:                                                  │
-│  "Let me evaluate this application step by step:           │
+│  With CoT:                                                 │
+│  "Let me evaluate this application step by step:          │
 │                                                             │
 │   1. Credit Score (680): Meets minimum threshold of 640 ✓  │
 │   2. Debt-to-Income (35%): Below 43% maximum ✓             │
@@ -297,13 +297,13 @@ Final verified answer:
 │  │ [▼ Show reasoning]                                   │  │
 │  └──────────────────────────────────────────────────────┘  │
 │                                                             │
-│  Expanded:                                                  │
+│  Expanded:                                                 │
 │  ┌──────────────────────────────────────────────────────┐  │
 │  │ Recommendation: Upgrade to Pro Plan                   │  │
 │  │                                                       │  │
 │  │ [▲ Hide reasoning]                                   │  │
 │  │                                                       │  │
-│  │ Here's why:                                          │  │
+│  │ Here's why:                                         │  │
 │  │ 1. You're using 85% of free storage (4.2/5 GB)      │  │
 │  │ 2. You've hit the API limit 3 times this week       │  │
 │  │ 3. Pro adds team features you asked about           │  │
@@ -378,11 +378,11 @@ Problem: [Your problem]
 
 ## Things to Remember
 
-1. **"Think step by step" is magic** — Simple addition, big improvement
-2. **CoT shows the work** — Enables debugging and trust
-3. **Best for complex reasoning** — Math, logic, analysis, decisions
-4. **Combine with other techniques** — Few-shot CoT is powerful
-5. **Use for explainability** — Users trust AI they can understand
+1. **"Think step by step" is magic** : Simple addition, big improvement
+2. **CoT shows the work** : Enables debugging and trust
+3. **Best for complex reasoning** : Math, logic, analysis, decisions
+4. **Combine with other techniques** : Few-shot CoT is powerful
+5. **Use for explainability** : Users trust AI they can understand
 
 ---
 
@@ -406,4 +406,4 @@ _______________________________________________
 
 ---
 
-**Next:** [04-Multi-Modal.md](04-Multi-Modal.md) — Working with images, audio, and more
+**Next:** [04-Multi-Modal.md](04-Multi-Modal.md) - Working with images, audio, and more

@@ -2,9 +2,9 @@
 
 ## Quick Take
 
-AI shines in situations where rules would be impossible or impractical to write. This chapter helps you recognize when AI is genuinely the right tool—not just the exciting one.
+AI shines in situations where rules would be impossible or impractical to write. This chapter helps you recognize when AI is genuinely the right tool, not just the exciting one.
 
-**Remember:** AI excels at tasks humans find easy but can't explain how they do—understanding language, recognizing patterns, making judgment calls.
+**Remember:** AI excels at tasks humans find easy but can't explain how they do. understanding language, recognizing patterns, making judgment calls.
 
 ---
 
@@ -58,7 +58,7 @@ When you need to understand what people *mean*, not just match keywords.
 │ WHY RULES FAIL AT LANGUAGE                                   │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  Customer messages meaning "I want to cancel":              │
+│  Customer messages meaning "I want to cancel":             │
 │                                                             │
 │  • "Cancel my subscription"                                 │
 │  • "I want out"                                             │
@@ -151,14 +151,14 @@ When inputs can vary infinitely and rules would never cover everything.
 │                                                             │
 │  Task: Categorize customer feedback                         │
 │                                                             │
-│  RULES APPROACH:                                            │
+│  RULES APPROACH:                                           │
 │  If contains "bug" or "crash" → Technical                  │
 │  If contains "billing" or "charge" → Billing               │
 │  If contains "cancel" → Churn Risk                         │
 │  ...50 more rules...                                        │
 │  Still misses: "The thing doesn't work"                    │
 │                                                             │
-│  AI APPROACH:                                               │
+│  AI APPROACH:                                              │
 │  "Categorize this feedback: Bug Report, Feature Request,   │
 │   Billing Issue, Praise, Complaint, Question"              │
 │  Handles any phrasing naturally                             │
@@ -221,7 +221,7 @@ When you need to predict preferences based on patterns.
 │ PERSONALIZATION EXAMPLE                                      │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  User context:                                              │
+│  User context:                                             │
 │  - Viewed: Running shoes, fitness trackers                  │
 │  - Purchased: Yoga mat last month                           │
 │  - Searched: "marathon training plan"                       │
@@ -329,7 +329,7 @@ I've located your order #12345 and am shipping the correct blue
 item today with express delivery at no extra charge. You'll receive
 tracking within the hour.
 
-Please keep the red item as our apology—no need to return it.
+Please keep the red item as our apology, no need to return it.
 
 Is there anything else I can help with?"
 
@@ -387,13 +387,13 @@ Use AI when you can check most of these:
 
 ## Things to Remember
 
-1. **Use AI for language understanding**—it's what LLMs are built for
-2. **Use AI for content generation**—creating, not just transforming
-3. **Use AI when rules would be endless**—infinite input variations
-4. **Use AI for extraction**—structured data from unstructured sources
-5. **Use AI for natural interfaces**—conversational, not command-based
-6. **Acceptable accuracy threshold is key**—AI isn't 100% reliable
+1. **Use AI for language understanding**, it's what LLMs are built for
+2. **Use AI for content generation**, creating, not just transforming
+3. **Use AI when rules would be endless**, infinite input variations
+4. **Use AI for extraction**, structured data from unstructured sources
+5. **Use AI for natural interfaces**, conversational, not command-based
+6. **Acceptable accuracy threshold is key**: AI isn't 100% reliable
 
 ---
 
-**Next:** [03-Decision-Framework.md](03-Decision-Framework.md) — A practical framework for deciding
+**Next:** [03-Decision-Framework.md](03-Decision-Framework.md) - A practical framework for deciding

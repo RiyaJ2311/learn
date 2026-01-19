@@ -138,10 +138,64 @@ def example():
 
 ### Visual Elements
 
+#### ASCII Diagrams
+
+**General Rules:**
 - Use ASCII diagrams for architecture and flows
-- Keep diagrams under 65 characters wide
-- Include clear labels and arrows (→, ▼, etc.)
+- Keep diagrams under 65 characters wide for readability
+- Include clear labels and arrows (→, ▼, ↔, etc.)
 - Use boxes for grouping concepts
+- Wrap diagrams in code blocks with triple backticks
+
+**Box Drawing Characters:**
+
+Use proper Unicode box-drawing characters. Never mix hyphens with box characters.
+
+**Correct characters:**
+```
+┌  ┐  └  ┘  (corners)
+│  (vertical)
+─  (horizontal)
+├  ┤  ┬  ┴  ┼  (connectors)
+```
+
+**Common mistakes to avoid:**
+```
+❌ BAD:  ┌─────-┐    (mixing hyphen with box chars)
+❌ BAD:  │-----│     (using hyphens instead of box chars)
+❌ BAD:  └──-──┘     (inconsistent characters)
+
+✅ GOOD: ┌──────┐    (clean box-drawing characters)
+✅ GOOD: │      │     (proper vertical bars)
+✅ GOOD: └──────┘     (consistent corners)
+```
+
+**Alignment:**
+- All box corners must align perfectly
+- Text inside boxes should have consistent padding
+- Nested boxes should have proper indentation (2 spaces per level)
+
+**Example of proper nested diagram:**
+```
+┌─────────────────────────────────────┐
+│ OUTER BOX                           │
+├─────────────────────────────────────┤
+│                                     │
+│  ┌──────────────────────────────┐   │
+│  │ INNER BOX                   │   │
+│  │                             │   │
+│  │  ┌──────────────────────┐   │   │
+│  │  │ DEEPLY NESTED BOX   │   │   │
+│  │  └──────────────────────┘   │   │
+│  └──────────────────────────────┘   │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+**Tables within diagrams:**
+- Use simple alignment, not box characters
+- Separate columns with spaces or │ bars
+- Keep consistent spacing
 
 ---
 

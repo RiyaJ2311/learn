@@ -10,7 +10,7 @@ Rules-based systems (traditional code, if-then logic, decision trees) have been 
 
 ## The Case for Rules
 
-Rules aren't outdated—they're often optimal:
+Rules aren't outdated, they're often optimal:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -363,4 +363,4 @@ Before reaching for AI, check these boxes:
 
 ---
 
-**Next:** [02-When-to-Use-AI.md](02-When-to-Use-AI.md) — When AI is the right choice
+**Next:** [02-When-to-Use-AI.md](02-When-to-Use-AI.md) - When AI is the right choice

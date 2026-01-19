@@ -15,29 +15,29 @@
 │ THE AI HIERARCHY                                            │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  ┌─────────────────────────────────────────────────────-┐   │
-│  │ ARTIFICIAL INTELLIGENCE (AI)                         │   │
-│  │ Machines that can perform tasks requiring            │   │
-│  │ human-like intelligence                              │   │
-│  │                                                      │   │
-│  │  ┌───────────────────────────────────────────-──┐    │   │
-│  │  │ MACHINE LEARNING (ML)                        │    │   │
-│  │  │ AI that learns from data instead of          │    │   │
-│  │  │ being explicitly programmed                  │    │   │
-│  │  │                                              │    │   │
-│  │  │  ┌─────────────────────────────────────-┐    │    │   │
-│  │  │  │ DEEP LEARNING                        │    │    │   │
-│  │  │  │ ML using neural networks with        │    │    │   │
-│  │  │  │ many layers                          │    │    │   │
-│  │  │  │                                      │    │    │   │
-│  │  │  │  ┌─────────────────────────────-┐    │    │    │   │
-│  │  │  │  │ LARGE LANGUAGE MODELS        │    │    │    │   │
-│  │  │  │  │ Deep learning for text       │    │    │    │   │
-│  │  │  │  │ (GPT, Claude, Llama)         │    │    │    │   │
-│  │  │  │  └──────────────────────────-───┘    │    │    │   │
-│  │  │  └──────────────────────────────-───────┘    │    │   │
-│  │  └──────────────────────────────────-───────────┘    │   │
-│  └──────────────────────────────────────-───────────────┘   │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │ ARTIFICIAL INTELLIGENCE (AI)                        │   │
+│  │ Machines that can perform tasks requiring           │   │
+│  │ human-like intelligence                             │   │
+│  │                                                     │   │
+│  │  ┌──────────────────────────────────────────────┐   │   │
+│  │  │ MACHINE LEARNING (ML)                       │   │   │
+│  │  │ AI that learns from data instead of         │   │   │
+│  │  │ being explicitly programmed                 │   │   │
+│  │  │                                             │   │   │
+│  │  │  ┌──────────────────────────────────────┐   │   │   │
+│  │  │  │ DEEP LEARNING                       │   │   │   │
+│  │  │  │ ML using neural networks with       │   │   │   │
+│  │  │  │ many layers                         │   │   │   │
+│  │  │  │                                     │   │   │   │
+│  │  │  │  ┌──────────────────────────────┐   │   │   │   │
+│  │  │  │  │ LARGE LANGUAGE MODELS       │   │   │   │   │
+│  │  │  │  │ Deep learning for text      │   │   │   │   │
+│  │  │  │  │ (GPT, Claude, Llama)        │   │   │   │   │
+│  │  │  │  └──────────────────────────────┘   │   │   │   │
+│  │  │  └──────────────────────────────────────┘   │   │   │
+│  │  └──────────────────────────────────────────────┘   │   │
+│  └─────────────────────────────────────────────────────┘   │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -48,7 +48,7 @@
 
 ### Artificial Intelligence (AI)
 
-**What it is:** Any technology that makes computers do things that seem "smart" things that would require intelligence if a human did them.
+**What it is:** Any technology that makes computers do things that seem "smart" (things that would require intelligence if a human did them).
 
 **Examples:**
 
@@ -122,7 +122,7 @@ Human provides examples → Computer finds patterns → Computer makes predictio
 **The magic trick:** LLMs are trained to predict "what word comes next?"
 
 ```
-Input:  "The cat sat on the ___"
+Input: "The cat sat on the ___"
 Output: "mat" (highest probability)
         "floor" (second highest)
         "table" (third highest)
@@ -150,7 +150,7 @@ Do this prediction billions of times with billions of examples, and something re
 | --------------------------- | ------------------------------ | ---------------------------------- |
 | **Language AI**       | Understands and generates text | Chatbots, writing tools, search    |
 | **Vision AI**         | Understands images and video   | Photo tagging, quality control     |
-| **Speech AI**         | Converts speech to/from text  | Transcription, voice assistants    |
+| **Speech AI**         | Converts speech to/from text   | Transcription, voice assistants    |
 | **Recommendation AI** | Predicts what users want       | Netflix, Spotify, Amazon           |
 | **Predictive AI**     | Forecasts future values        | Sales forecasting, demand planning |
 
@@ -165,18 +165,18 @@ After: AI can generate things ("Create an image of a cat playing chess")
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ DISCRIMINATIVE vs GENERATIVE AI                              │
+│ DISCRIMINATIVE vs GENERATIVE AI                             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  DISCRIMINATIVE AI (Classification)                         │
-│  ─────────────────────────────────                         │
-│  Input: Image → Output: "Cat" or "Dog"                     │
-│  Input: Email → Output: "Spam" or "Not Spam"               │
+│  ─────────────────────────────────                          │
+│  Input: Image → Output: "Cat" or "Dog"                      │
+│  Input: Email → Output: "Spam" or "Not Spam"                │
 │                                                             │
 │  GENERATIVE AI (Creation)                                   │
 │  ────────────────────────                                   │
-│  Input: "A cat" → Output: [New image of a cat]             │
-│  Input: "Write an email" → Output: [Complete email]        │
+│  Input: "A cat" → Output: [New image of a cat]              │
+│  Input: "Write an email" → Output: [Complete email]         │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -192,8 +192,8 @@ After: AI can generate things ("Create an image of a cat playing chess")
 
 | Provider            | Models               | Known For                          |
 | ------------------- | -------------------- | ---------------------------------- |
-| **OpenAI**    | GPT-4, GPT-4o, o1    | First major LLM, most popular API  |
-| **Anthropic** | Claude 3.5, Claude 3 | Safety-focused, great at reasoning |
+| **OpenAI**    | GPT-5, GPT-4o, o1    | First major LLM, most popular API  |
+| **Anthropic** | Claude 4.5, Claude 3 | Safety-focused, great at reasoning |
 | **Google**    | Gemini               | Multimodal, integrated with Google |
 | **Meta**      | Llama                | Open source models                 |
 | **Mistral**   | Mistral, Mixtral     | European, efficient models         |

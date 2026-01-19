@@ -163,10 +163,10 @@ while not done:
 ## Multi-Agent Architectures
 
 ```
-HIERARCHICAL:    Manager → Workers
-PEER:            Agent ↔ Agent ↔ Agent
-PIPELINE:        Agent → Agent → Agent
-DEBATE:          Advocate vs Critic → Judge
+HIERARCHICAL:   Manager → Workers
+PEER:           Agent ↔ Agent ↔ Agent
+PIPELINE:       Agent → Agent → Agent
+DEBATE:         Advocate vs Critic → Judge
 ```
 
 ---

@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-Everything you've learned so far—prompting, tools, reasoning—comes together in **AI Agents**. An agent is an AI that can autonomously plan and execute multi-step tasks, using tools to take actions and adapting based on results.
+Everything you've learned so far, prompting, tools, reasoning, comes together in **AI Agents**. An agent is an AI that can autonomously plan and execute multi-step tasks, using tools to take actions and adapting based on results.
 
 **Your Context:** You've mastered individual AI capabilities. Now you're ready to understand how to combine them into autonomous systems.
 

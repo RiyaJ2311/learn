@@ -4,7 +4,7 @@
 
 An AI agent is a system that uses a language model as its "brain" to autonomously accomplish goals. Unlike simple AI that responds to single prompts, agents can plan, take actions, observe results, and iterate until the task is complete.
 
-**Remember:** Agents are not a new type of AI—they're an architecture that combines LLMs with tools and a reasoning loop.
+**Remember:** Agents are not a new type of AI. They're an architecture that combines LLMs with tools and a reasoning loop.
 
 ---
 
@@ -88,7 +88,7 @@ Let's trace through a real example:
 │  → No tool needed, generates the plan                       │
 │                                                             │
 │  TURN 5 - OUTPUT                                            │
-│  "Here's your social media plan:                           │
+│  "Here's your social media plan:                          │
 │                                                             │
 │   Post 1: AI Guide                                         │
 │   - Twitter: [5 tweet thread ideas]                        │
@@ -339,12 +339,12 @@ To build an agent, you need:
 
 ## Things to Remember
 
-1. **Agents = LLM + Tools + Loop** — It's an architecture, not magic
-2. **Think-Act-Observe cycle** — The fundamental pattern
-3. **Autonomy is a spectrum** — From human-approved to fully autonomous
-4. **Best for complex, multi-step tasks** — Not simple Q&A
-5. **Limitations exist** — Long horizons, mistakes, cost
-6. **Start simple** — Add complexity as needed
+1. **Agents = LLM + Tools + Loop** : It's an architecture, not magic
+2. **Think-Act-Observe cycle** : The fundamental pattern
+3. **Autonomy is a spectrum** : From human-approved to fully autonomous
+4. **Best for complex, multi-step tasks** : Not simple Q&A
+5. **Limitations exist** : Long horizons, mistakes, cost
+6. **Start simple** : Add complexity as needed
 
 ---
 
@@ -361,4 +361,4 @@ Ask yourself:
 
 ---
 
-**Next:** [02-Agent-Patterns.md](02-Agent-Patterns.md) — Common agent architectures
+**Next:** [02-Agent-Patterns.md](02-Agent-Patterns.md) - Common agent architectures

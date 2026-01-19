@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-You don't need a PhD to understand how ChatGPT and Claude work. This chapter explains the actual mechanism in plain language—enough to understand why LLMs behave the way they do.
+You don't need a PhD to understand how ChatGPT and Claude work. This chapter explains the actual mechanism in plain language, enough to understand why LLMs behave the way they do.
 
 **Remember:** LLMs are next-word predictors that became surprisingly capable at scale.
 
@@ -21,7 +21,7 @@ At their core, LLMs do one thing: **predict the next word** (technically, the ne
 │                                                             │
 │  Input: "The quick brown fox jumps over the lazy"          │
 │                                                             │
-│  LLM calculates probabilities:                              │
+│  LLM calculates probabilities:                             │
 │    "dog"    → 85% probability                              │
 │    "cat"    → 8% probability                               │
 │    "bear"   → 2% probability                               │
@@ -29,7 +29,7 @@ At their core, LLMs do one thing: **predict the next word** (technically, the ne
 │                                                             │
 │  Output: "dog"                                              │
 │                                                             │
-│  Now the input becomes:                                     │
+│  Now the input becomes:                                    │
 │  "The quick brown fox jumps over the lazy dog"             │
 │                                                             │
 │  And the process repeats...                                │
@@ -37,7 +37,7 @@ At their core, LLMs do one thing: **predict the next word** (technically, the ne
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**That's it.** Everything else—writing essays, answering questions, coding—emerges from this simple process done at massive scale.
+**That's it.** Everything else, writing essays, answering questions, coding, emerges from this simple process done at massive scale.
 
 ---
 
@@ -93,7 +93,7 @@ LLMs use an architecture called the **Transformer** (from a 2017 Google paper).
 
 ### The Key Innovation: Attention
 
-The breakthrough was "attention"—the ability to focus on relevant parts of the input.
+The breakthrough was "attention", the ability to focus on relevant parts of the input.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -105,7 +105,7 @@ The breakthrough was "attention"—the ability to focus on relevant parts of the
 │                                                             │
 │  Question: What does "it" refer to?                         │
 │                                                             │
-│  ATTENTION looks at relationships:                          │
+│  ATTENTION looks at relationships:                         │
 │                                                             │
 │  "it" ←──────────── high attention ──────────→ "animal"    │
 │  "it" ←── low attention ──→ "road"                         │
@@ -133,7 +133,7 @@ An LLM is essentially a huge collection of numbers called "parameters" or "weigh
 | Claude 3 Opus | Unknown | Unknown |
 | Llama 2 | 7B / 13B / 70B versions | 13-140 GB |
 
-**Think of it like this:** The parameters encode everything the model "knows"—patterns about language, facts, reasoning strategies—all compressed into numbers.
+**Think of it like this:** The parameters encode everything the model "knows", patterns about language, facts, reasoning strategies, all compressed into numbers.
 
 ---
 
@@ -150,7 +150,7 @@ Hallucination: When AI confidently states something false.
 │                                                             │
 │  User: "Who won the 2027 World Series?"                     │
 │                                                             │
-│  LLM thinking (simplified):                                 │
+│  LLM thinking (simplified):                                │
 │  - Questions like this usually get team name answers        │
 │  - Common baseball teams: Yankees, Dodgers, Red Sox...      │
 │  - Generate confident-sounding response                     │
@@ -158,7 +158,7 @@ Hallucination: When AI confidently states something false.
 │  LLM: "The New York Yankees won the 2027 World Series"      │
 │                                                             │
 │  Problem: 2027 hasn't happened. The LLM doesn't know       │
-│  what it doesn't know—it just generates plausible text.    │
+│  what it doesn't know, it just generates plausible text.    │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -207,14 +207,14 @@ When you chat with ChatGPT or Claude, here's what actually happens:
 │ A "CONVERSATION" FROM THE LLM'S VIEW                         │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  What you see:                                              │
+│  What you see:                                             │
 │  ────────────                                               │
 │  You: "Hi!"                                                 │
 │  AI: "Hello! How can I help?"                               │
 │  You: "What's 2+2?"                                         │
 │  AI: "2+2 equals 4."                                        │
 │                                                             │
-│  What the LLM sees (simplified):                            │
+│  What the LLM sees (simplified):                           │
 │  ──────────────────────────────                             │
 │  "[System: You are a helpful assistant]                     │
 │   [User: Hi!]                                               │
@@ -268,7 +268,7 @@ Training the model to give responses humans prefer.
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**This is why ChatGPT and Claude are polite and helpful**—they were trained to be.
+**This is why ChatGPT and Claude are polite and helpful**, they were trained to be.
 
 ---
 
@@ -286,12 +286,12 @@ Training the model to give responses humans prefer.
 
 ## Things to Remember
 
-1. **LLMs predict the next word**—everything else emerges from this
+1. **LLMs predict the next word**, everything else emerges from this
 2. **Training is pattern learning** on billions of examples
 3. **Attention** lets models understand relationships between words
 4. **Hallucination happens** because LLMs generate plausible text, not retrieve facts
 5. **Temperature controls** creativity vs. determinism
-6. **"Memory" is an illusion**—the whole conversation is re-sent each time
+6. **"Memory" is an illusion**, the whole conversation is re-sent each time
 
 ---
 
@@ -312,4 +312,4 @@ This is still being debated, but it explains why AI labs are building ever-large
 
 ---
 
-**Next:** [03-Tokens-Context.md](03-Tokens-Context.md) — The economics and constraints of AI
+**Next:** [03-Tokens-Context.md](03-Tokens-Context.md) - The economics and constraints of AI

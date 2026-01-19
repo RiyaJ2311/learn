@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-Agents need to remember what happened—previous messages, tool results, decisions made, and facts learned. **Memory management** is how you handle the limited context window while maintaining coherent long-running conversations.
+Agents need to remember what happened, previous messages, tool results, decisions made, and facts learned. **Memory management** is how you handle the limited context window while maintaining coherent long-running conversations.
 
 **Remember:** Context windows are finite. Smart memory management lets agents work on complex tasks without losing important information.
 
@@ -25,7 +25,7 @@ Agents need to remember what happened—previous messages, tool results, decisio
 │  ...                                                        │
 │  Turn 20: Context is now 50,000+ tokens                    │
 │                                                             │
-│  PROBLEMS:                                                  │
+│  PROBLEMS:                                                 │
 │  • Context window fills up                                  │
 │  • Cost increases with every turn                          │
 │  • Important early info gets pushed out                    │
@@ -39,7 +39,7 @@ Agents need to remember what happened—previous messages, tool results, decisio
 ## Types of Agent Memory
 
 ### 1. Conversation Memory
-The message history—what was said and done.
+The message history, what was said and done.
 
 ```python
 class ConversationMemory:
@@ -125,10 +125,10 @@ Keep only the N most recent messages.
 │ SLIDING WINDOW                                               │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  Before (too long):                                         │
+│  Before (too long):                                        │
 │  [Msg1][Msg2][Msg3][Msg4][Msg5][Msg6][Msg7][Msg8][Msg9]    │
 │                                                             │
-│  After (window of 5):                                       │
+│  After (window of 5):                                      │
 │  [Msg5][Msg6][Msg7][Msg8][Msg9]                            │
 │                                                             │
 │  ✓ Simple                                                   │
@@ -153,10 +153,10 @@ Periodically summarize old messages.
 │ SUMMARIZATION                                                │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  Before:                                                    │
+│  Before:                                                   │
 │  [Msg1][Msg2][Msg3][Msg4][Msg5][Msg6][Msg7][Msg8]         │
 │                                                             │
-│  After:                                                     │
+│  After:                                                    │
 │  [Summary of Msg1-5][Msg6][Msg7][Msg8]                     │
 │                                                             │
 │  ✓ Preserves key information                               │
@@ -207,7 +207,7 @@ Store everything, retrieve only what's relevant.
 │                                                             │
 │  All messages stored in vector database                     │
 │                                                             │
-│  When agent needs context:                                  │
+│  When agent needs context:                                 │
 │  1. Take current message/question                          │
 │  2. Search for similar past messages                       │
 │  3. Include top-K relevant messages                        │
@@ -439,12 +439,12 @@ Track token counts to predict issues.
 
 ## Things to Remember
 
-1. **Memory is finite** — Plan for context limits
-2. **Multiple strategies** — Sliding window, summarization, retrieval
-3. **Hybrid works best** — Combine approaches
-4. **State ≠ Messages** — Track task state separately
-5. **Persist important state** — Survive crashes and restarts
+1. **Memory is finite** : Plan for context limits
+2. **Multiple strategies** : Sliding window, summarization, retrieval
+3. **Hybrid works best** : Combine approaches
+4. **State ≠ Messages**, Track task state separately
+5. **Persist important state** : Survive crashes and restarts
 
 ---
 
-**Next:** [04-Production-Ready.md](04-Production-Ready.md) — Making agents production-ready
+**Next:** [04-Production-Ready.md](04-Production-Ready.md) - Making agents production-ready

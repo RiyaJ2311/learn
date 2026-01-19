@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-What if instead of one agent doing everything, you had specialized agents working together? **Multi-agent systems** use multiple AI agents—each with specific roles and expertise—to accomplish complex tasks collaboratively.
+What if instead of one agent doing everything, you had specialized agents working together? **Multi-agent systems** use multiple AI agents, each with specific roles and expertise, to accomplish complex tasks collaboratively.
 
 **Remember:** Just like human teams, AI teams can be more effective than individuals through specialization and collaboration.
 
@@ -19,7 +19,7 @@ What if instead of one agent doing everything, you had specialized agents workin
 │                                                             │
 │  Task: "Build a complete marketing campaign"               │
 │                                                             │
-│  One agent trying to:                                       │
+│  One agent trying to:                                      │
 │  ✓ Research target audience                                │
 │  ✓ Write copy                                               │
 │  ✓ Design graphics (not really possible)                   │
@@ -27,7 +27,7 @@ What if instead of one agent doing everything, you had specialized agents workin
 │  ✓ Manage budget                                            │
 │  ✓ Coordinate timeline                                      │
 │                                                             │
-│  Problems:                                                  │
+│  Problems:                                                 │
 │  • Context window fills up                                  │
 │  • Can't be expert in everything                           │
 │  • Single failure point                                     │
@@ -56,7 +56,7 @@ What if instead of one agent doing everything, you had specialized agents workin
 │  │   AGENT     │   │   AGENT     │   │   AGENT     │      │
 │  └─────────────┘   └─────────────┘   └─────────────┘      │
 │                                                             │
-│  Each agent:                                                │
+│  Each agent:                                               │
 │  • Has specialized expertise                               │
 │  • Has focused context                                     │
 │  • Can work in parallel                                    │
@@ -88,7 +88,7 @@ What if instead of one agent doing everything, you had specialized agents workin
 │  │  WORKER 1   │   │  WORKER 2   │   │  WORKER 3   │      │
 │  └─────────────┘   └─────────────┘   └─────────────┘      │
 │                                                             │
-│  Flow:                                                      │
+│  Flow:                                                     │
 │  1. Manager receives complex task                          │
 │  2. Manager breaks down and assigns to workers             │
 │  3. Workers complete subtasks                               │
@@ -144,7 +144,7 @@ What if instead of one agent doing everything, you had specialized agents workin
 │  │Research │   │ Draft   │   │ Review  │   │ Polish  │    │
 │  └─────────┘   └─────────┘   └─────────┘   └─────────┘    │
 │                                                             │
-│  Flow:                                                      │
+│  Flow:                                                     │
 │  1. Agent 1 produces output                                │
 │  2. Output becomes Agent 2's input                         │
 │  3. Each agent adds/refines                                │
@@ -266,7 +266,7 @@ while task := task_queue.get():
 │  │   facts      │ │   story      │ │              │        │
 │  └──────────────┘ └──────────────┘ └──────────────┘        │
 │                                                             │
-│  FLOW:                                                      │
+│  FLOW:                                                     │
 │  1. Editor assigns: "Research AI agent trends"             │
 │  2. Researcher → Findings to Writer                        │
 │  3. Writer → Draft to SEO Specialist                       │
@@ -371,12 +371,12 @@ result = crew.kickoff()
 
 ## Things to Remember
 
-1. **Specialize agents** — Each agent does one thing well
-2. **Choose the right architecture** — Hierarchical, peer, pipeline, or debate
-3. **Design clear communication** — Messages, shared memory, or queues
-4. **Balance complexity** — Only use multi-agent when it helps
-5. **Monitor and trace** — Debugging multi-agent is harder
+1. **Specialize agents** : Each agent does one thing well
+2. **Choose the right architecture** : Hierarchical, peer, pipeline, or debate
+3. **Design clear communication** : Messages, shared memory, or queues
+4. **Balance complexity** : Only use multi-agent when it helps
+5. **Monitor and trace** : Debugging multi-agent is harder
 
 ---
 
-**Next:** [05-Subagents.md](05-Subagents.md) — Delegating to specialized subagents
+**Next:** [05-Subagents.md](05-Subagents.md) - Delegating to specialized subagents

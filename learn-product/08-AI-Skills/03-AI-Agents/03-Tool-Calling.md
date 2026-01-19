@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-You learned tool basics in Module 2. For agents, tool design becomes critical—tools are what give agents their power to interact with the real world. This chapter covers advanced tool design specifically for agent systems.
+You learned tool basics in Module 2. For agents, tool design becomes critical, tools are what give agents their power to interact with the real world. This chapter covers advanced tool design specifically for agent systems.
 
 **Remember:** Agent tool design is different from simple tool use. Agents need tools that support exploration, recovery, and chained operations.
 
@@ -17,12 +17,12 @@ You learned tool basics in Module 2. For agents, tool design becomes critical—
 │ SIMPLE TOOL USE vs AGENT TOOL USE                            │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  SIMPLE (Single call):                                      │
+│  SIMPLE (Single call):                                     │
 │  User: "What's the weather?"                               │
 │  AI: [calls get_weather] → "It's sunny"                    │
 │  Done.                                                      │
 │                                                             │
-│  AGENT (Multiple calls, decisions):                         │
+│  AGENT (Multiple calls, decisions):                        │
 │  Agent: "I need to explore the codebase"                   │
 │  [calls list_files] → sees 500 files                       │
 │  [calls search_code("error handling")] → finds 20 matches  │
@@ -313,13 +313,13 @@ def execute_tool(tool_name, args, permission_level):
 │ TRY → CHECK → RETRY (Reflexion)                              │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  ATTEMPT 1:                                                 │
+│  ATTEMPT 1:                                                │
 │  write_code(solution1) → run_tests() → FAIL                │
 │                                                             │
-│  REFLECT:                                                   │
+│  REFLECT:                                                  │
 │  "Tests failed because of edge case X"                     │
 │                                                             │
-│  ATTEMPT 2:                                                 │
+│  ATTEMPT 2:                                                │
 │  write_code(solution2) → run_tests() → PASS                │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
@@ -418,13 +418,13 @@ delete_user(id) → Error: {
 
 ## Things to Remember
 
-1. **Agent tools need rich context** — Return enough for the agent to decide next steps
-2. **Support incremental operations** — Don't force all-or-nothing
-3. **Include metadata** — What actions are possible from here?
-4. **Graceful errors** — Tell agent what went wrong and how to fix it
-5. **Permission levels** — Protect against unintended actions
-6. **Design for composition** — Tools should work together
+1. **Agent tools need rich context** : Return enough for the agent to decide next steps
+2. **Support incremental operations** : Don't force all-or-nothing
+3. **Include metadata** : What actions are possible from here?
+4. **Graceful errors** : Tell agent what went wrong and how to fix it
+5. **Permission levels** : Protect against unintended actions
+6. **Design for composition** : Tools should work together
 
 ---
 
-**Next:** [04-Multi-Agent-Systems.md](04-Multi-Agent-Systems.md) — Multiple agents working together
+**Next:** [04-Multi-Agent-Systems.md](04-Multi-Agent-Systems.md) - Multiple agents working together

@@ -2,7 +2,7 @@
 
 ## Quick Take
 
-You understand what agents are and how they work. Now it's time to build them. This module is hands-on—covering architecture decisions, frameworks, memory management, and production considerations.
+You understand what agents are and how they work. Now it's time to build them. This module is hands-on, covering architecture decisions, frameworks, memory management, and production considerations.
 
 **Your Context:** You want to go from understanding agents to actually building them.
 

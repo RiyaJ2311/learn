@@ -4,7 +4,7 @@
 
 A well-architected agent is modular, testable, and maintainable. This chapter covers the key components and how to structure them.
 
-**Remember:** Good architecture separates concerns—the LLM, tools, memory, and orchestration are distinct components that work together.
+**Remember:** Good architecture separates concerns. the LLM, tools, memory, and orchestration are distinct components that work together.
 
 ---
 
@@ -415,4 +415,4 @@ print(result)
 
 ---
 
-**Next:** [02-Frameworks.md](02-Frameworks.md) — Popular agent frameworks
+**Next:** [02-Frameworks.md](02-Frameworks.md) - Popular agent frameworks

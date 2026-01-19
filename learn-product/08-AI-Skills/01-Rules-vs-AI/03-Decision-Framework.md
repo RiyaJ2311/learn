@@ -314,21 +314,21 @@ Use this for your next feature decision:
 │                                                             │
 │ 3. Natural language involved? □ Yes → AI likely  □ No      │
 │                                                             │
-│ 4. Accuracy required:                                       │
+│ 4. Accuracy required:                                      │
 │    □ 100% (Rules)  □ 95-99% (AI possible)  □ <95% (AI OK) │
 │                                                             │
-│ 5. Cost calculation:                                        │
+│ 5. Cost calculation:                                       │
 │    Expected volume: _______ requests/month                  │
 │    AI cost per request: $______                            │
 │    Monthly AI cost: $_______                                │
 │    Value delivered: $_______                                │
 │    ROI: ____x                                               │
 │                                                             │
-│ 6. Speed requirement:                                       │
+│ 6. Speed requirement:                                      │
 │    □ <100ms (Rules)  □ 100-500ms (Rules/cached AI)         │
 │    □ 500ms-5s (AI OK)  □ >5s (AI OK, maybe async)          │
 │                                                             │
-│ DECISION:                                                   │
+│ DECISION:                                                  │
 │ □ Pure Rules                                                │
 │ □ Pure AI                                                   │
 │ □ Hybrid: AI for _________, Rules for _________            │
@@ -364,10 +364,10 @@ Use this for your next feature decision:
 ## Things to Remember
 
 1. **Use the 5-question framework** for consistent decisions
-2. **Hybrid approaches often win**—combine strengths of both
-3. **Cost math matters**—AI at scale can be expensive
-4. **Start with rules** when uncertain—you can add AI later
-5. **Don't over-engineer**—simplest solution that works
+2. **Hybrid approaches often win**, combine strengths of both
+3. **Cost math matters**: AI at scale can be expensive
+4. **Start with rules** when uncertain, you can add AI later
+5. **Don't over-engineer**, simplest solution that works
 
 ---
 
@@ -405,4 +405,4 @@ Rules would need thousands of merchant mappings.
 
 ---
 
-**Next Module:** [../02-AI-Skills/00-Index.md](../02-AI-Skills/00-Index.md) — Advanced AI techniques
+**Next Module:** [../02-AI-Skills/00-Index.md](../02-AI-Skills/00-Index.md) : Advanced AI techniques

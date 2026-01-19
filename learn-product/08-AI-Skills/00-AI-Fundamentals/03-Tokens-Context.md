@@ -10,7 +10,7 @@ Every AI interaction has a hidden economy: **tokens**. Understanding tokens help
 
 ## What Are Tokens?
 
-Tokens are the units LLMs use to read and write text. They're not quite words, not quite characters—they're somewhere in between.
+Tokens are the units LLMs use to read and write text. They're not quite words, not quite characters, they're somewhere in between.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -69,7 +69,7 @@ AI APIs charge by token. Understanding tokens = predicting costs.
 ```
 
 ### 2. Context Window Limits
-Every model has a maximum "context window"—the total tokens it can process at once.
+Every model has a maximum "context window", the total tokens it can process at once.
 
 | Model | Context Window |
 |-------|----------------|
@@ -87,7 +87,7 @@ More tokens = slower responses. Both input and output tokens add latency.
 ## The Context Window
 
 ### What Is It?
-The context window is the model's "working memory"—everything it can see at once.
+The context window is the model's "working memory", everything it can see at once.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -165,20 +165,20 @@ Total Cost = (Input Tokens × Input Price) + (Output Tokens × Output Price)
 │                                                             │
 │  Scenario: Customer support bot using GPT-4o                │
 │                                                             │
-│  Per conversation:                                          │
+│  Per conversation:                                         │
 │  - System prompt: 500 tokens                                │
 │  - Avg user messages: 200 tokens                            │
 │  - Avg bot responses: 300 tokens                            │
 │  - Avg conversation: 5 exchanges                            │
 │                                                             │
-│  Input per conversation:                                    │
+│  Input per conversation:                                   │
 │    500 + (5 × 200) + (4 × 300) = 2,700 tokens              │
 │    (system + user messages + prior bot responses)           │
 │                                                             │
-│  Output per conversation:                                   │
+│  Output per conversation:                                  │
 │    5 × 300 = 1,500 tokens                                  │
 │                                                             │
-│  Cost per conversation:                                     │
+│  Cost per conversation:                                    │
 │    Input: 2,700 × $2.50/1M = $0.00675                      │
 │    Output: 1,500 × $10.00/1M = $0.015                      │
 │    Total: ~$0.022 per conversation                          │
@@ -281,7 +281,7 @@ Things that consume tokens you might not think about:
 │                                                             │
 │  1. Estimate tokens per user interaction: _____             │
 │                                                             │
-│  2. Calculate raw cost per interaction:                     │
+│  2. Calculate raw cost per interaction:                    │
 │     (Input tokens × price) + (Output tokens × price)        │
 │     = $_____ per interaction                                │
 │                                                             │
@@ -311,7 +311,7 @@ APIs have tokens-per-minute (TPM) limits, not just requests-per-minute.
 
 1. **Tokens ≈ 0.75 words** for English text
 2. **Output tokens cost more** than input tokens
-3. **Context window is working memory**—exceed it and you lose context
+3. **Context window is working memory**, exceed it and you lose context
 4. **Conversation history is re-sent** with every message
 5. **Optimize prompts and model choice** to manage costs
 6. **Calculate costs early** when designing AI features
@@ -340,4 +340,4 @@ Answer: ~$4.69/month
 
 ---
 
-**Next:** [04-Prompting-Basics.md](04-Prompting-Basics.md) — How to talk to AI effectively
+**Next:** [04-Prompting-Basics.md](04-Prompting-Basics.md) - How to talk to AI effectively

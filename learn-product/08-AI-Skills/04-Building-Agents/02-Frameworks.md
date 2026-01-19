@@ -376,12 +376,12 @@ class SimpleAgent:
 
 ## Things to Remember
 
-1. **Start simple** — Direct SDK teaches fundamentals
-2. **Match framework to need** — Don't over-engineer
-3. **Consider production needs** — Persistence, monitoring, debugging
-4. **Evaluate dependencies** — More framework = more complexity
-5. **Try before committing** — Build a prototype with each option
+1. **Start simple** : Direct SDK teaches fundamentals
+2. **Match framework to need** : Don't over-engineer
+3. **Consider production needs** : Persistence, monitoring, debugging
+4. **Evaluate dependencies** : More framework = more complexity
+5. **Try before committing** : Build a prototype with each option
 
 ---
 
-**Next:** [03-Memory-State.md](03-Memory-State.md) — Managing conversation memory
+**Next:** [03-Memory-State.md](03-Memory-State.md) - Managing conversation memory

@@ -126,7 +126,7 @@ What if AI could do more than just generate text? What if it could check the wea
 
 ## Writing Good Tool Descriptions
 
-The description is crucial—it's how the AI decides whether to use the tool.
+The description is crucial, it's how the AI decides whether to use the tool.
 
 ### Bad vs Good Descriptions
 
@@ -145,10 +145,10 @@ The description is crucial—it's how the AI decides whether to use the tool.
 
 ### Description Best Practices
 
-1. **Say what it does, not how** — AI doesn't need implementation details
-2. **Mention the input type** — "for any city", "given a user ID"
-3. **Mention the output** — "Returns temperature and conditions"
-4. **Note limitations** — "Only works for US addresses"
+1. **Say what it does, not how** : AI doesn't need implementation details
+2. **Mention the input type** : "for any city", "given a user ID"
+3. **Mention the output** : "Returns temperature and conditions"
+4. **Note limitations** : "Only works for US addresses"
 
 ---
 
@@ -389,11 +389,11 @@ AI: [Calls delete_account tool]
 
 ## Things to Remember
 
-1. **Tools give AI superpowers** — Access to data and actions
-2. **AI suggests, you execute** — Keep control of actual actions
-3. **Descriptions matter** — AI decides tool use based on descriptions
-4. **Security first** — Validate, authorize, and log everything
-5. **Start simple** — Begin with read-only tools before actions
+1. **Tools give AI superpowers** : Access to data and actions
+2. **AI suggests, you execute** : Keep control of actual actions
+3. **Descriptions matter** : AI decides tool use based on descriptions
+4. **Security first** : Validate, authorize, and log everything
+5. **Start simple** : Begin with read-only tools before actions
 
 ---
 
@@ -435,4 +435,4 @@ Tool 3: attach_receipt
 
 ---
 
-**Next:** [03-Chain-of-Thought.md](03-Chain-of-Thought.md) — Making AI reason step by step
+**Next:** [03-Chain-of-Thought.md](03-Chain-of-Thought.md) - Making AI reason step by step

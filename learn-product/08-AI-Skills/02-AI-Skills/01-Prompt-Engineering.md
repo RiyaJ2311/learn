@@ -94,7 +94,7 @@ CONTEXT:
 BEHAVIORAL RULES:
 - Always ask clarifying questions before making assumptions
 - Push back on feature requests without clear user problems
-- Be direct and concise—busy PMs don't have time for fluff
+- Be direct and concise, busy PMs don't have time for fluff
 - If you don't know something, say so
 
 OUTPUT FORMAT:
@@ -121,15 +121,15 @@ Showing the AI examples of what you want before asking for output.
 │ THE POWER OF EXAMPLES                                        │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  Zero-shot:  "Classify this ticket"                        │
-│  Result:     Variable, AI guesses your categories           │
+│  Zero-shot: "Classify this ticket"                        │
+│  Result:    Variable, AI guesses your categories           │
 │                                                             │
-│  Few-shot:   "Here are examples:                           │
+│  Few-shot:  "Here are examples:                          │
 │              'App crashes' → Bug                            │
 │              'Add dark mode' → Feature Request              │
 │              'How do I export?' → Question                  │
 │              Now classify: 'Login is broken'"              │
-│  Result:     Consistent, follows your patterns              │
+│  Result:    Consistent, follows your patterns              │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -158,10 +158,10 @@ Output:
 
 ### Best Practices for Examples
 
-1. **Use 2-5 examples** — More isn't always better
-2. **Cover edge cases** — Include diverse scenarios
-3. **Match your real data** — Examples should look like actual inputs
-4. **Be consistent** — Same format in every example
+1. **Use 2-5 examples** : More isn't always better
+2. **Cover edge cases** : Include diverse scenarios
+3. **Match your real data** : Examples should look like actual inputs
+4. **Be consistent** : Same format in every example
 
 ---
 
@@ -423,11 +423,11 @@ When your prompt isn't working:
 
 ## Things to Remember
 
-1. **System prompts set the stage** — Define role, rules, and format once
-2. **Few-shot examples teach patterns** — Show, don't just tell
-3. **Explicit formats reduce variance** — Be specific about output structure
-4. **Chains break complexity** — Multiple simple steps beat one complex prompt
-5. **Test and iterate** — Prompts are code; treat them as such
+1. **System prompts set the stage** : Define role, rules, and format once
+2. **Few-shot examples teach patterns** : Show, don't just tell
+3. **Explicit formats reduce variance** : Be specific about output structure
+4. **Chains break complexity** : Multiple simple steps beat one complex prompt
+5. **Test and iterate** : Prompts are code; treat them as such
 
 ---
 
@@ -453,4 +453,4 @@ _______________________________________________
 
 ---
 
-**Next:** [02-Tool-Use.md](02-Tool-Use.md) — Giving AI the ability to take actions
+**Next:** [02-Tool-Use.md](02-Tool-Use.md) - Giving AI the ability to take actions

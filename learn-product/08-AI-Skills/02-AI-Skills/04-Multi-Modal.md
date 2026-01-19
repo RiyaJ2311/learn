@@ -4,7 +4,7 @@
 
 AI isn't limited to text anymore. Modern models can see images, understand documents, and work with multiple types of content simultaneously. This chapter covers how to leverage **multimodal capabilities** in your products.
 
-**Remember:** The same AI that writes text can now analyze images, charts, screenshots, and documents—opening up entirely new product possibilities.
+**Remember:** The same AI that writes text can now analyze images, charts, screenshots, and documents. opening up entirely new product possibilities.
 
 ---
 
@@ -19,13 +19,13 @@ AI isn't limited to text anymore. Modern models can see images, understand docum
 │                                                             │
 │  TEXT-ONLY (2020-2022)                                      │
 │  ────────────────────                                       │
-│  Input:  Text                                               │
+│  Input: Text                                               │
 │  Output: Text                                               │
 │  Example: "Summarize this article"                         │
 │                                                             │
 │  MULTIMODAL (2023+)                                         │
 │  ─────────────────                                          │
-│  Input:  Text + Images + Documents + Audio                  │
+│  Input: Text + Images + Documents + Audio                  │
 │  Output: Text (and sometimes images)                        │
 │  Example: "What's in this image? Now write a caption."     │
 │                                                             │
@@ -120,7 +120,7 @@ print(message.content[0].text)
 │                                                             │
 │  User uploads: [Photo of restaurant receipt]               │
 │                                                             │
-│  AI extracts:                                               │
+│  AI extracts:                                              │
 │  {                                                          │
 │    "merchant": "Olive Garden",                             │
 │    "date": "2024-01-15",                                   │
@@ -176,7 +176,7 @@ Input: [App screenshot]
 AI Output:
 "UX Issues Identified:
 
-1. CRITICAL: CTA button ('Buy Now') is below fold—users
+1. CRITICAL: CTA button ('Buy Now') is below fold, users
    might not see it. Move above fold.
 
 2. HIGH: Text contrast on gray background is 3.2:1,
@@ -185,7 +185,7 @@ AI Output:
 3. MEDIUM: Touch targets are ~35px, below recommended
    44px minimum for mobile.
 
-4. LOW: Icon meanings unclear—add labels.
+4. LOW: Icon meanings unclear, add labels.
 
 Priority fix: Move CTA and fix contrast."
 ```
@@ -440,11 +440,11 @@ the text to AI for understanding and analysis.
 
 ## Things to Remember
 
-1. **Vision opens new possibilities** — Receipts, documents, UIs, charts
-2. **Context matters even more** — Tell AI what the image is and what you need
-3. **Combine with text instructions** — Multimodal = image + smart prompting
-4. **Mind the limitations** — Counting, small text, precise spatial reasoning
-5. **Optimize for cost** — Resize and crop before sending
+1. **Vision opens new possibilities** : Receipts, documents, UIs, charts
+2. **Context matters even more** : Tell AI what the image is and what you need
+3. **Combine with text instructions** : Multimodal = image + smart prompting
+4. **Mind the limitations** : Counting, small text, precise spatial reasoning
+5. **Optimize for cost** : Resize and crop before sending
 
 ---
 
@@ -479,4 +479,4 @@ _______________________________________________
 
 ---
 
-**Next Module:** [../03-AI-Agents/00-Index.md](../03-AI-Agents/00-Index.md) — AI Agents and Autonomous Systems
+**Next Module:** [../03-AI-Agents/00-Index.md](../03-AI-Agents/00-Index.md) : AI Agents and Autonomous Systems

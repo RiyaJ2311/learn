@@ -17,7 +17,7 @@ Not all agents are built the same. Different patterns suit different problems. T
 │ REACT PATTERN                                                │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  The agent interleaves reasoning and action:                │
+│  The agent interleaves reasoning and action:               │
 │                                                             │
 │  THOUGHT: "I need to find the user's order status"         │
 │  ACTION: search_orders(user_id=123)                        │
@@ -56,7 +56,7 @@ Not all agents are built the same. Different patterns suit different problems. T
 │                                                             │
 │  PHASE 1: PLANNING                                          │
 │  ─────────────────                                          │
-│  "To complete this task, I will:                           │
+│  "To complete this task, I will:                          │
 │   1. Search for competitor websites                         │
 │   2. Extract pricing from each site                         │
 │   3. Compile into comparison table                          │
@@ -151,14 +151,14 @@ Not all agents are built the same. Different patterns suit different problems. T
 │ REFLEXION PATTERN                                            │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  ATTEMPT 1:                                                 │
+│  ATTEMPT 1:                                                │
 │  Agent writes code → Tests fail                            │
 │                                                             │
-│  REFLECTION:                                                │
+│  REFLECTION:                                               │
 │  "My code failed because I didn't handle the edge case    │
 │   of empty arrays. I should add a guard clause."          │
 │                                                             │
-│  ATTEMPT 2:                                                 │
+│  ATTEMPT 2:                                                │
 │  Agent writes improved code → Tests pass                   │
 │                                                             │
 │  The agent learns from its mistakes within the session     │
@@ -184,7 +184,7 @@ Not all agents are built the same. Different patterns suit different problems. T
 │  Agent produces initial output                              │
 │                                                             │
 │  STEP 2: CRITIQUE                                           │
-│  Agent (or another agent) reviews for issues:               │
+│  Agent (or another agent) reviews for issues:              │
 │  - "Paragraph 2 makes an unsupported claim"                │
 │  - "The tone is too formal for the audience"               │
 │                                                             │
@@ -280,7 +280,7 @@ Real-world agents often combine patterns:
 │      market size, trends, recommendations"                  │
 │                                                             │
 │  2. DECOMPOSE (Self-Ask)                                    │
-│     "For competitors, I need to find:                      │
+│     "For competitors, I need to find:                     │
 │      - Who are the main players?                           │
 │      - What are their market shares?                       │
 │      - What are their strategies?"                         │
@@ -354,11 +354,11 @@ FINAL: [combined answer]
 
 ## Things to Remember
 
-1. **ReAct is most flexible** — Good default for dynamic tasks
-2. **Plan-Execute is most predictable** — Good for structured workflows
-3. **Self-Ask excels at research** — Decomposes complex questions
-4. **Reflexion enables learning** — Great for tasks with clear success criteria
-5. **Combine patterns** — Real agents often use multiple patterns
+1. **ReAct is most flexible** : Good default for dynamic tasks
+2. **Plan-Execute is most predictable** : Good for structured workflows
+3. **Self-Ask excels at research** : Decomposes complex questions
+4. **Reflexion enables learning** : Great for tasks with clear success criteria
+5. **Combine patterns** : Real agents often use multiple patterns
 
 ---
 
@@ -376,10 +376,10 @@ For each scenario, choose the best pattern:
    Pattern: ______________ Why: ______________
 
 **Answers:**
-1. ReAct — Dynamic situations, need flexible reasoning
-2. Self-Ask or Hybrid — Research requiring decomposition
-3. Reflexion — Clear success criteria (tests), iterative improvement
+1. ReAct : Dynamic situations, need flexible reasoning
+2. Self-Ask or Hybrid : Research requiring decomposition
+3. Reflexion : Clear success criteria (tests), iterative improvement
 
 ---
 
-**Next:** [03-Tool-Calling.md](03-Tool-Calling.md) — Designing tools for agents
+**Next:** [03-Tool-Calling.md](03-Tool-Calling.md) - Designing tools for agents
