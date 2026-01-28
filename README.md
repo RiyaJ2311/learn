@@ -245,6 +245,7 @@ This isn't about being perfect. It's about being better than yesterday.
 - **[AI Glossary](08-AI-Skills/GLOSSARY.md)** - Comprehensive AI terminology
 - **[Documentation Guidelines](08-AI-Skills/DOCUMENTATION-GUIDELINES.md)** - Content standards
 - **[Nomenclature](NOMENCLATURE.md)** - Repository naming conventions and standards
+- **[Migration Log](MIGRATION-LOG.md)** - History of structural changes and renames
 
 ---
 
