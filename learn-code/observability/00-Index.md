@@ -24,6 +24,34 @@ Whether you're building:
 
 ---
 
+## Observability vs Database
+
+A common question: "Isn't this just storing data?"
+
+| Aspect | Database | Observability |
+|--------|----------|---------------|
+| **Purpose** | Store business data | Understand system behavior |
+| **Data type** | Users, orders, products | Logs, metrics, traces |
+| **Questions answered** | "What is the data?" | "Why is the system behaving this way?" |
+| **Query pattern** | CRUD operations | Exploratory debugging |
+| **Retention** | Long-term (years) | Short-term (days/weeks) |
+| **Cost priority** | Durability, consistency | Query speed, high cardinality |
+
+```
+DATABASE stores:
+  User { id: 123, name: "Jane", email: "jane@example.com" }
+
+OBSERVABILITY captures:
+  "User 123 made a request at 10:30:00, it took 2.3s,
+   called 3 services, failed at payment service with timeout"
+```
+
+**Think of it this way:**
+- Database = your application's **memory** (what happened)
+- Observability = your application's **diary** (how it happened, why it failed)
+
+---
+
 ## Module Contents
 
 | File                                             | Topic          | What You'll Learn                           |
