@@ -52,6 +52,34 @@ OBSERVABILITY captures:
 
 ---
 
+## Observability vs Product Analytics
+
+Another common confusion: "Isn't this what PostHog/Amplitude does?"
+
+| Aspect | Observability | Product Analytics (PostHog, Amplitude) |
+|--------|---------------|----------------------------------------|
+| **Tracks** | System behavior | User behavior |
+| **Questions** | "Why did the server crash?" | "Which features do users click?" |
+| **Data** | Logs, metrics, traces | Events, sessions, funnels |
+| **Users** | Engineers debugging | PMs making product decisions |
+| **Tools** | Datadog, Honeycomb, Grafana | PostHog, Amplitude, Mixpanel |
+
+```
+OBSERVABILITY (Datadog, Honeycomb):
+  "Request failed at 10:30:05, error: timeout connecting to payment service"
+
+PRODUCT ANALYTICS (PostHog, Amplitude):
+  "User clicked 'Add to Cart' → viewed cart → abandoned checkout"
+```
+
+**You need both:**
+- Product analytics tells you "users are abandoning checkout"
+- Observability tells you "checkout is timing out for 15% of requests"
+
+One finds the *what*, the other finds the *why*.
+
+---
+
 ## Module Contents
 
 | File                                             | Topic          | What You'll Learn                           |
@@ -101,6 +129,12 @@ OBSERVABILITY captures:
 | **AI Agents** | [AI Agent Observability](../../08-AI-Skills/04-Building-Agents/05-Observability.md) |
 | **Web APIs** | Covered in fundamentals + tools |
 | **Microservices** | Covered in fundamentals + tools |
+
+---
+
+## Test Your Knowledge
+
+**[Take the Observability Quiz](../../tests/observability-quiz.md)** - 17 questions to test your understanding as a PM.
 
 ---
 
