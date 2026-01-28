@@ -88,6 +88,7 @@ One finds the *what*, the other finds the *why*.
 | [02-Tools-Overview.md](02-Tools-Overview.md)     | Tooling        | Honeycomb, Datadog, Grafana, and more       |
 | [03-History.md](03-History.md)                   | Context        | From 1990s web apps to modern systems       |
 | [04-For-PMs.md](04-For-PMs.md)                   | PM Perspective | Why PMs need to understand observability    |
+| [05-Quick-Cheatsheet.md](05-Quick-Cheatsheet.md) | Reference      | Quick formulas, gotchas, and common mistakes |
 
 ---
 
@@ -134,7 +135,7 @@ One finds the *what*, the other finds the *why*.
 
 ## Test Your Knowledge
 
-**[Take the Observability Quiz](../../tests/observability-quiz.md)** - 17 questions to test your understanding as a PM.
+**[Take the Observability Quiz](../../tests/observability-quiz.md)** - 20 questions (diverse formats) to test your understanding as a PM.
 
 ---
 
