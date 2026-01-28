@@ -4,7 +4,9 @@
 
 This guide assumes you understand observability fundamentals. If you're new to observability, **start here first:**
 
-**→ [Generic Observability Guide](../../../learn-code/observability/00-Index.md)**
+**→ [Generic Observability Guide](../../../learn-code/observability/)**
+
+(Or on GitHub: https://github.com/RiyaJ2311/learn/tree/main/learn-code/observability)
 
 That guide covers:
 - What observability is (vs monitoring)
@@ -361,7 +363,7 @@ agent.log_completion(outcome="success")
 
 ## AI-Specific Tools
 
-While generic observability platforms work for AI (see [Tools Overview](../../../learn-code/observability/02-Tools-Overview.md)), some tools specialize in LLM/AI observability:
+While generic observability platforms work for AI (see [Tools Overview](../../../learn-code/observability/02-Tools-Overview.md) or [on GitHub](https://github.com/RiyaJ2311/learn/blob/main/learn-code/observability/02-Tools-Overview.md)), some tools specialize in LLM/AI observability:
 
 | Tool | Focus | Best For |
 |------|-------|----------|
@@ -456,9 +458,8 @@ Ask:
 
 ## Next Steps
 
-- **Generic observability basics:** [Learn the fundamentals](../../../learn-code/observability/00-Index.md)
-- **Tools comparison:** [Choose your observability platform](../../../learn-code/observability/02-Tools-Overview.md)
-- **PM perspective:** [Why PMs care about observability](../../../learn-code/observability/05-For-PMs.md)
+- **Generic observability basics:** [Learn the fundamentals](../../../learn-code/observability/00-Index.md) ([GitHub](https://github.com/RiyaJ2311/learn/blob/main/learn-code/observability/00-Index.md))
+- **Tools comparison:** [Choose your observability platform](../../../learn-code/observability/02-Tools-Overview.md) ([GitHub](https://github.com/RiyaJ2311/learn/blob/main/learn-code/observability/02-Tools-Overview.md))
 - **Build your agent:** [Agent Architecture](01-Architecture.md)
 
 ---
