@@ -210,7 +210,7 @@ Add to `.git/hooks/pre-commit`:
 
 ```bash
 #!/bin/bash
-cd learn-product/08-AI-Skills/tools
+cd learn/08-AI-Skills/tools
 ./doc-validator.sh validate
 if [ $? -ne 0 ]; then
     echo "Documentation validation failed. Run './doc-validator.sh fix' to fix issues."

@@ -1,7 +1,7 @@
 # Image Reorganization Plan
 
 ## Overview
-Moving all images to: `/Users/riyajawandhiya/learn/learn-product/02-Data-Storytelling/data-visualization/images/`
+Moving all images to: `/Users/riyajawandhiya/learn/02-Data-Storytelling/data-visualization/images/`
 
 ## Images to Rename and Move
 
