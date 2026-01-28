@@ -48,6 +48,7 @@ By the end of this module, you'll understand how to create:
 | 03 | Memory & State | Managing context and conversation history |
 | 04 | Production Ready | Error handling, cost control, deployment |
 | 05 | Observability | Understanding system behavior, debugging, metrics |
+| 06 | Observability Quick Reference | Fast reference for observability concepts |
 
 ---
 
@@ -209,3 +210,4 @@ Or based on your needs:
 - "How do I handle memory?" → [03-Memory-State.md](03-Memory-State.md)
 - "How do I make it production-ready?" → [04-Production-Ready.md](04-Production-Ready.md)
 - "How do I monitor and debug my agent?" → [05-Observability.md](05-Observability.md)
+- "Quick observability reference?" → [06-Observability-Quick-Reference.md](06-Observability-Quick-Reference.md)

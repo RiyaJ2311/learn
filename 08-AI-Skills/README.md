@@ -40,25 +40,48 @@ This is your path from Level 1 to Level 4.
 
 ## Module Contents
 
-| Module | Title           | What You'll Learn                                          |
-| ------ | --------------- | ---------------------------------------------------------- |
-| 00     | AI Fundamentals | How AI/LLMs actually work, tokens, context, prompting      |
-| 01     | Rules vs AI     | When to use simple code vs AI, the most important decision |
-| 02     | AI Skills       | Prompt engineering, tool use, chain-of-thought, multimodal |
-| 03     | AI Agents       | What agents are, patterns, architectures, subagents        |
-| 04     | Building Agents | Hands-on guide to building your first agent                |
+| Module | Title           | What You'll Learn                                          | Time to Complete |
+| ------ | --------------- | ---------------------------------------------------------- | ---------------- |
+| 00     | AI Fundamentals | How AI/LLMs actually work, tokens, context, prompting      | 2-3 hours |
+| 01     | Rules vs AI     | When to use simple code vs AI, the most important decision | 1 hour |
+| 02     | AI Skills       | Prompt engineering, tool use, chain-of-thought, multimodal | 3-4 hours |
+| 03     | AI Agents       | What agents are, patterns, architectures, subagents        | 2-3 hours |
+| 04     | Building Agents | Hands-on guide to building your first agent                | 5-7 hours |
+
+**Total learning time:** ~15-20 hours for complete path
 
 ---
 
 ## Quick Start Guide
 
-**Intro to AI?** Start with [00-AI-Fundamentals/00-Index.md](00-AI-Fundamentals/00-Index.md)
+### Choose Your Path
 
-**AI agents intro?** Jump to [03-AI-Agents/00-Index.md](03-AI-Agents/00-Index.md)
+**Path 1: Complete Beginner → Builder**
+Start here if you're new to AI concepts and want to go all the way to building agents:
+1. [00-AI-Fundamentals](00-AI-Fundamentals/00-Index.md) - Understand the basics
+2. [01-Rules-vs-AI](01-Rules-vs-AI/00-Index.md) - Learn when to use AI
+3. [02-AI-Skills](02-AI-Skills/00-Index.md) - Master prompting techniques
+4. [03-AI-Agents](03-AI-Agents/00-Index.md) - Understand agent patterns
+5. [04-Building-Agents](04-Building-Agents/00-Index.md) - Build your first agent
 
-**Want to build something?** Go to [04-Building-Agents/00-Index.md](04-Building-Agents/00-Index.md)
+**Path 2: Understand AI as a PM**
+Start here if you want to make better product decisions but not write code:
+1. [00-AI-Fundamentals](00-AI-Fundamentals/00-Index.md) - How AI works
+2. [01-Rules-vs-AI](01-Rules-vs-AI/00-Index.md) - When to use AI (critical!)
+3. [03-AI-Agents](03-AI-Agents/00-Index.md) - What agents can do
+4. Stop here or continue if interested
 
-**Need definitions?** Check the [GLOSSARY.md](GLOSSARY.md) for all key terms
+**Path 3: Already Know AI, Want to Build**
+Start here if you understand LLMs and want hands-on experience:
+1. [03-AI-Agents](03-AI-Agents/00-Index.md) - Agent architectures
+2. [04-Building-Agents](04-Building-Agents/00-Index.md) - Build production agents
+
+**Path 4: Just-in-Time Learning**
+Start here if you have a specific question:
+- "How do I write better prompts?" → [02-AI-Skills/01-Prompt-Engineering.md](02-AI-Skills/01-Prompt-Engineering.md)
+- "What's the difference between rules and AI?" → [01-Rules-vs-AI](01-Rules-vs-AI/00-Index.md)
+- "How do I monitor my agent?" → [04-Building-Agents/05-Observability.md](04-Building-Agents/05-Observability.md)
+- "What does [term] mean?" → [GLOSSARY.md](GLOSSARY.md)
 
 ---
 
@@ -114,6 +137,47 @@ Here's what you'll learn to build:
 | Intelligent workflow automation     | AI Agents          | 03     |
 | Autonomous research assistant       | Subagents          | 03     |
 | Custom AI features for your product | Building Agents    | 04     |
+
+---
+
+## Concepts That Apply Beyond AI
+
+While learning AI, you'll encounter fundamental software engineering concepts that are valuable across all domains:
+
+### Observability
+**Where you'll see it:** Module 04 - Building Agents
+
+**What it is:** Understanding system behavior by examining outputs (logs, metrics, traces)
+
+**The broader context:**
+- Existed since the 1990s for web applications
+- Used for microservices, distributed systems, traditional apps
+- Tools like Datadog, Grafana, Prometheus predate AI by 10-15 years
+- AI just adds new dimensions: non-determinism, token costs, quality evaluation
+
+**Why it matters:** Observability is a core skill for any software system, not just AI. You're learning principles that apply everywhere.
+
+### API Design
+**Where you'll see it:** Throughout the modules
+
+**What it is:** How to structure interfaces between components
+
+**The broader context:**
+- RESTful APIs, GraphQL existed before AI
+- Tool calling in AI agents follows standard API patterns
+- Skills transfer directly to traditional backend development
+
+### System Architecture
+**Where you'll see it:** Module 03 & 04
+
+**What it is:** How to structure complex systems
+
+**The broader context:**
+- Agent patterns mirror microservice patterns
+- Modular design, separation of concerns, fault tolerance
+- These principles apply to any software system
+
+**Bottom line:** This isn't just an "AI course." You're learning software engineering through the lens of AI.
 
 ---
 

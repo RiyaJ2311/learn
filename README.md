@@ -147,20 +147,35 @@ These aren't character flaws. They're habits. And habits can be rewired.
 
 ### AI Module Contents
 
-| Module | Focus | What You'll Learn |
-|--------|-------|------------------|
-| [00-AI-Fundamentals](08-AI-Skills/00-AI-Fundamentals/) | Foundation | How AI/LLMs work, tokens, context, embeddings |
-| [01-Rules-vs-AI](08-AI-Skills/01-Rules-vs-AI/) | Decision Framework | When to use code vs AI (critical skill) |
-| [02-AI-Skills](08-AI-Skills/02-AI-Skills/) | Techniques | Prompting, tool use, chain-of-thought |
-| [03-AI-Agents](08-AI-Skills/03-AI-Agents/) | Architecture | Agent patterns, multi-agent systems |
-| [04-Building-Agents](08-AI-Skills/04-Building-Agents/) | Implementation | Build production-ready agents |
+| Module | Focus | What You'll Learn | Time |
+|--------|-------|------------------|------|
+| [00-AI-Fundamentals](08-AI-Skills/00-AI-Fundamentals/) | Foundation | How AI/LLMs work, tokens, context, embeddings | 2-3h |
+| [01-Rules-vs-AI](08-AI-Skills/01-Rules-vs-AI/) | Decision Framework | When to use code vs AI (critical skill) | 1h |
+| [02-AI-Skills](08-AI-Skills/02-AI-Skills/) | Techniques | Prompting, tool use, chain-of-thought | 3-4h |
+| [03-AI-Agents](08-AI-Skills/03-AI-Agents/) | Architecture | Agent patterns, multi-agent systems | 2-3h |
+| [04-Building-Agents](08-AI-Skills/04-Building-Agents/) | Implementation | Build production-ready agents | 5-7h |
+
+**Note:** You'll also learn transferable software engineering concepts like observability, API design, and system architecture - skills that apply far beyond AI.
 
 ### AI Quick Start
 
-- **New to AI?** Start with [AI Fundamentals](08-AI-Skills/00-AI-Fundamentals/00-Index.md)
-- **Understand AI basics?** Jump to [Rules vs AI](08-AI-Skills/01-Rules-vs-AI/00-Index.md)
-- **Want to build?** Go to [Building Agents](08-AI-Skills/04-Building-Agents/00-Index.md)
-- **Need definitions?** Check [AI Glossary](08-AI-Skills/GLOSSARY.md)
+**Choose your learning path:**
+
+1. **Beginner → Builder** (15-20 hours)
+   - Complete all modules in order from Fundamentals to Building Agents
+
+2. **PM Understanding** (5-7 hours)
+   - Focus: Fundamentals → Rules vs AI → Agents overview
+
+3. **Builder Fast Track** (8-10 hours)
+   - Jump to: AI Agents → Building Agents
+
+4. **Just-in-Time**
+   - [Glossary](08-AI-Skills/GLOSSARY.md) for definitions
+   - [Cheatsheet](08-AI-Skills/CHEATSHEET.md) for quick reference
+   - Individual topics as needed
+
+**Full guide:** [08-AI-Skills/README.md](08-AI-Skills/README.md)
 
 ---
 

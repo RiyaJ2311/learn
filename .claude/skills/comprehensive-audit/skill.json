@@ -1,0 +1,29 @@
+{
+  "skillName": "comprehensive-audit",
+  "description": "Run a comprehensive 7-agent parallel audit analyzing Readability, Ownership, Storytelling, UI Design, UX, SEO, and Accessibility across the entire portfolio",
+  "version": "1.0.0",
+  "triggers": [
+    "audit",
+    "comprehensive audit",
+    "run full audit",
+    "analyze portfolio",
+    "check all issues",
+    "run audit",
+    "portfolio audit",
+    "7 agent audit"
+  ],
+  "prompts": [
+    "prompts/00-capture-baseline.md",
+    "prompts/01-readability-audit.md",
+    "prompts/02-ownership-audit.md",
+    "prompts/03-storytelling-audit.md",
+    "prompts/04-ui-audit.md",
+    "prompts/05-ux-audit.md",
+    "prompts/06-seo-audit.md",
+    "prompts/07-accessibility-audit.md",
+    "prompts/08-compare-screenshots.md",
+    "prompts/09-update-documentation.md"
+  ],
+  "author": "Riya Jawandhiya",
+  "tags": ["audit", "quality", "ux", "seo", "accessibility", "design-system"]
+}

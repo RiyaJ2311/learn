@@ -223,6 +223,77 @@ Honeycomb makes this query instant, even with millions of sessions.
 
 ---
 
+## Observability: Not Just for AI
+
+### The Important Context
+
+**Observability is NOT an AI-specific concept.** It's been a fundamental software engineering practice for decades, long before LLMs existed. Understanding this helps you appreciate both:
+1. Why observability principles apply broadly
+2. What makes AI observability uniquely challenging
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ TRADITIONAL vs AI OBSERVABILITY                              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  TRADITIONAL SOFTWARE (Pre-AI)                              │
+│  ──────────────────────────────                             │
+│  Deterministic: same input → same output                   │
+│  Reproducible bugs: can replay and fix                     │
+│  Performance = speed + memory                               │
+│  Logs capture everything                                    │
+│                                                             │
+│  ✓ Tools: Prometheus, Grafana, Datadog, New Relic          │
+│  ✓ Focus: Uptime, latency, errors, throughput              │
+│                                                             │
+│  AI/LLM SYSTEMS (Now)                                       │
+│  ──────────────                                             │
+│  Non-deterministic: same prompt ≠ same response            │
+│  Probabilistic failures: hard to reproduce                 │
+│  Performance = quality + relevance + cost                   │
+│  Need to capture: prompts, responses, reasoning            │
+│                                                             │
+│  ✓ Tools: Same ones + LangSmith, specialized AI tools      │
+│  ✓ Focus: Above + token usage, decision quality, costs     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Where Observability Came From
+
+**1990s-2000s: Web Applications Emerge**
+- Engineers monitored web servers with basic tools
+- Questions: "Is my server up?" "How many requests per second?"
+- Tools: Server logs, simple scripts, Nagios
+
+**2000s-2010s: Distributed Systems Grow**
+- Microservices made debugging harder (one request → many services)
+- Questions: "Which service is slow?" "Where did the request fail?"
+- Tools: APM (Application Performance Monitoring) - New Relic, AppDynamics
+
+**2016: The Observability Movement**
+- Charity Majors & team coin "observability" at Honeycomb
+- Key insight: Modern systems are too complex for pre-defined dashboards
+- Need: Ask arbitrary questions, not just check predefined metrics
+
+**2020s: AI Adds New Dimensions**
+- LLMs introduce non-determinism and high costs
+- Questions: "Why did it generate this response?" "What's this costing us?"
+- Challenge: Same observability principles, but applied to probabilistic systems
+
+### Why You're Learning It in AI Context
+
+You're encountering observability here because:
+
+1. **AI systems are harder to observe** - Non-deterministic behavior requires better tooling
+2. **Costs matter more** - Every API call costs money, need to track it
+3. **Quality is subjective** - Not just "did it work?" but "was it good?"
+4. **It's newly critical for PMs** - Understanding agent behavior is core to product decisions
+
+**But remember:** The principles (logs, metrics, traces) apply to ALL software, not just AI.
+
+---
+
 ## A Brief History of Observability
 
 ### The Evolution
@@ -286,6 +357,29 @@ Honeycomb makes this query instant, even with millions of sessions.
 - Every session is unique
 
 **Traditional monitoring can't handle this.** You need observability.
+
+### The Tools Legacy
+
+Most observability tools you use for AI **existed before AI:**
+
+| Tool | Original Purpose (Year) | Now Used For AI |
+|------|------------------------|-----------------|
+| **Datadog** | APM for web apps (2010) | Track AI agent performance, costs |
+| **New Relic** | App monitoring (2008) | Monitor LLM API latency |
+| **Grafana** | Metrics visualization (2014) | Dashboard AI costs, token usage |
+| **Prometheus** | Time-series metrics (2012) | Track token usage over time |
+| **ELK Stack** | Log aggregation (2010s) | Store agent conversation logs |
+| **Honeycomb** | Modern observability (2016) | Debug AI agent decision paths |
+| **OpenTelemetry** | Standard for instrumentation (2019) | Trace AI agent workflows |
+
+**AI-specific tools (emerged 2023+):**
+- **LangSmith** - Built specifically for LangChain apps
+- **LangFuse** - Open source LLM observability
+- **Weights & Biases** - Originally for ML training, now for LLM monitoring
+- **Helicone** - LLM cost tracking and observability
+- **Braintrust** - AI product evaluation and monitoring
+
+**Key takeaway:** You're not learning a new discipline. You're learning how to apply existing observability practices to a new domain (AI).
 
 ---
 
@@ -646,15 +740,133 @@ def agent_session(task):
 
 ---
 
+## How Traditional Observability Worked (Pre-AI)
+
+To appreciate what's different about AI observability, here's how it was done before:
+
+### Example: E-commerce Website Observability
+
+**System:** Traditional web app (Rails/Node.js + PostgreSQL + Redis)
+
+**What was tracked:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ TRADITIONAL WEB APP OBSERVABILITY                            │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  METRICS (Prometheus + Grafana)                             │
+│  ────────────────────────────                               │
+│  • HTTP requests per second                                 │
+│  • Response times (p50, p95, p99)                           │
+│  • Error rates (4xx, 5xx)                                   │
+│  • Database query times                                     │
+│  • Cache hit rates                                          │
+│  • CPU/Memory usage                                         │
+│                                                             │
+│  LOGS (ELK Stack)                                           │
+│  ──────────────                                             │
+│  • Application logs (Rails logger)                         │
+│  • Access logs (Nginx)                                      │
+│  • Error logs with stack traces                            │
+│  • Database slow query logs                                 │
+│                                                             │
+│  TRACES (New Relic / Datadog)                               │
+│  ──────────────────────────────                             │
+│  • Request flow: Browser → App → DB → Cache                │
+│  • Which endpoint was slow?                                 │
+│  • Which database query caused the bottleneck?              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Typical debugging flow:**
+1. Alert: "Error rate spiked to 5%"
+2. Check logs: Find stack trace for errors
+3. Check traces: See which endpoint is failing
+4. Check metrics: Database queries taking 5s instead of 50ms
+5. Fix: Add database index
+6. Verify: Error rate back to 0.1%
+
+**What was easy:**
+- Deterministic: Same request always fails the same way
+- Reproducible: Can test the fix locally
+- Clear metrics: Latency, errors, throughput
+
+**What was hard:**
+- Distributed systems (microservices)
+- Race conditions
+- Capacity planning
+
+### Example: Microservices Observability (2015-2020)
+
+**System:** Netflix-style architecture (100+ microservices)
+
+**New challenges:**
+- One user request → 20 service calls
+- Which service caused the slowdown?
+- How do you connect logs across services?
+
+**Solution: Distributed Tracing**
+```
+User Request (trace_id: abc123)
+  ↓
+API Gateway [50ms]
+  ↓
+Auth Service [120ms]
+  ↓
+Product Service [300ms]
+  ├─ Inventory Service [200ms] ← BOTTLENECK!
+  └─ Pricing Service [80ms]
+  ↓
+Response [550ms total]
+```
+
+**Tools used:**
+- **Zipkin / Jaeger**: Distributed tracing
+- **OpenTelemetry**: Standardized instrumentation
+- **Service mesh (Istio)**: Automatic trace propagation
+
+### What Changed with AI
+
+**Traditional system:**
+```
+User → API → Database → Response
+         ↓
+   [All deterministic]
+```
+
+**AI system:**
+```
+User → Agent Loop → LLM → Tool → LLM → Response
+         ↓          ↓      ↓      ↓
+   [Non-deterministic at every step]
+   [Costs money at each LLM call]
+   [Quality is subjective]
+```
+
+**New questions to answer:**
+- "Why did the agent choose this tool?" (decision tracking)
+- "Was the response good?" (quality evaluation)
+- "How much did this cost?" (token/cost tracking)
+- "What was in the context?" (prompt tracking)
+
+**Same principles, new dimensions.**
+
+---
+
 ## Things to Remember
 
-1. **Observability ≠ Monitoring**: Monitoring checks known issues, observability debugs unknown ones
-2. **Three pillars**: Logs (what happened), Metrics (how much), Traces (full journey)
-3. **Honeycomb pioneered modern observability**: High-cardinality, question-driven approach
-4. **PMs benefit hugely**: Understand costs, user behavior, and where to improve
-5. **Instrument early**: Adding observability after launch is much harder
-6. **AI agents need special care**: Track decisions, tools, tokens, and costs
-7. **Start simple**: Structured logging is better than nothing
+1. **Observability existed before AI**: Developed for web apps, microservices, distributed systems
+2. **Observability ≠ Monitoring**: Monitoring checks known issues, observability debugs unknown ones
+3. **Three pillars are universal**: Logs (what happened), Metrics (how much), Traces (full journey)
+4. **Most tools predate AI**: Datadog, New Relic, Prometheus, Grafana, ELK Stack
+5. **AI adds new dimensions**: Non-determinism, quality evaluation, cost tracking, decision paths
+6. **Same principles apply**: Instrument early, trace everything, ask questions
+7. **Honeycomb pioneered modern observability**: High-cardinality, question-driven approach (2016)
+8. **PMs benefit from observability**: Understand costs, user behavior, and where to improve
+9. **Instrument early**: Adding observability after launch is much harder
+10. **Start simple**: Structured logging is better than nothing
 
 ---
 
