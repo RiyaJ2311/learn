@@ -1,243 +1,38 @@
 # Observability for AI Agents
 
+## Prerequisites
+
+This guide assumes you understand observability fundamentals. If you're new to observability, **start here first:**
+
+**→ [Generic Observability Guide](../../../learn-code/observability/00-Index.md)**
+
+That guide covers:
+- What observability is (vs monitoring)
+- The three pillars: logs, metrics, traces
+- Tools overview: Honeycomb, Datadog, Grafana, etc.
+- History and context
+
+**This document focuses exclusively on what makes AI agent observability unique.**
+
+---
+
 ## Quick Take
 
-You've built an agent. It works on your laptop. But in production, when users hit edge cases or things go wrong, how do you know what happened? **Observability** is your ability to understand what's happening inside your system by looking at its outputs. For PMs, it's the difference between "it's broken" and "here's exactly why it's broken and how to fix it."
+AI agents are harder to observe than traditional software because they're non-deterministic. The same input can produce different outputs, failures are probabilistic, and "performance" includes subjective quality metrics, not just speed.
 
-**Remember:** You can't fix what you can't see. Observability turns your black-box AI agent into a glass box you can understand and improve.
-
----
-
-## What Is Observability?
-
-### The Simple Definition
-
-**Observability** is the ability to understand the internal state of a system by examining its external outputs.
-
-Think of it like this:
-- **Monitoring** asks: "Is it working?" (yes/no)
-- **Observability** asks: "Why is it behaving this way?" (deep understanding)
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ MONITORING vs OBSERVABILITY                                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  MONITORING (Old Way)                                       │
-│  ─────────────────────                                      │
-│  "Is the server up?"                   → Yes/No            │
-│  "Is response time under 2s?"          → Yes/No            │
-│  "Did the agent complete the task?"    → Yes/No            │
-│                                                             │
-│  ✓ Good for known problems                                 │
-│  ✗ Can't debug unknown issues                              │
-│                                                             │
-│  OBSERVABILITY (Modern Way)                                 │
-│  ──────────────────────────                                 │
-│  "Why did this specific request fail?"                     │
-│  "What path did the agent take?"                           │
-│  "Which tool call took 30 seconds?"                        │
-│  "What was the LLM thinking at step 3?"                    │
-│                                                             │
-│  ✓ Can debug ANY problem                                   │
-│  ✓ Discover unknown unknowns                               │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+**Key challenge:** You can't just check if it "worked." You need to understand *why* it made each decision and *how good* the outcome was.
 
 ---
 
-## Why PMs Need to Understand Observability
-
-### You Don't Need to Be an Engineer
-
-As a PM, you won't be writing observability code, but you need to:
-
-1. **Ask the right questions** when things go wrong
-2. **Understand trade-offs** between features and debuggability
-3. **Prioritize observability work** alongside features
-4. **Interpret dashboards** to make product decisions
-5. **Communicate with engineers** about system behavior
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ PM OBSERVABILITY SUPERPOWERS                                │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  WITHOUT OBSERVABILITY:                                    │
-│  ──────────────────────                                     │
-│  User: "Your AI agent gave me wrong info"                  │
-│  PM: "Let me check with engineering..."                    │
-│  [3 days of investigation]                                  │
-│  Engineer: "Can't reproduce it"                            │
-│                                                             │
-│  WITH OBSERVABILITY:                                       │
-│  ─────────────────────                                      │
-│  User: "Your AI agent gave me wrong info"                  │
-│  PM: [Opens dashboard, finds the session]                  │
-│  PM: "I can see it used outdated data from cache.          │
-│       The agent didn't call the refresh tool."             │
-│  Engineer: "Thanks! I know exactly what to fix."           │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Key PM Use Cases
-
-| What You Want to Know | Why It Matters | What You'll Look At |
-|-----------------------|----------------|---------------------|
-| **Are users getting value?** | Measure product success | Success rates, completion times |
-| **Where do users get stuck?** | Identify UX improvements | Agent loop patterns, failure points |
-| **What's costing us money?** | Budget AI spend | Token usage, API calls per session |
-| **Which features are used?** | Prioritize roadmap | Tool call frequency, user paths |
-| **Is performance acceptable?** | Set SLAs, find bottlenecks | Response times, step durations |
-
----
-
-## The Three Pillars of Observability
-
-Modern observability is built on three data types:
-
-### 1. Logs
-
-**What they are:** Text records of events that happened.
-
-**Example:**
-```
-[2026-01-28 10:23:45] Agent started task: "Find flight prices"
-[2026-01-28 10:23:46] Calling tool: search_flights(LAX, NYC)
-[2026-01-28 10:23:48] Tool returned: 5 results
-[2026-01-28 10:23:49] LLM analyzing results...
-[2026-01-28 10:23:51] Agent completed successfully
-```
-
-**Good for:**
-- Understanding what happened step-by-step
-- Debugging specific failures
-- Auditing agent decisions
-
-**Limitations:**
-- Hard to query across millions of events
-- Can miss patterns in the noise
-
----
-
-### 2. Metrics
-
-**What they are:** Numerical measurements over time.
-
-**Example:**
-```
-agent_completion_rate: 94.2%
-average_response_time: 2.3s
-tokens_per_session: 1,847
-error_rate: 0.8%
-```
-
-**Good for:**
-- High-level health monitoring
-- Spotting trends over time
-- Setting alerts and SLAs
-- Cost tracking
-
-**Limitations:**
-- Loses individual context
-- Can't tell you "why" something happened
-
----
-
-### 3. Traces
-
-**What they are:** The complete journey of a single request through your system.
-
-**Example:**
-```
-Trace ID: abc123
-
-Request received          [0ms]
-  ↓
-LLM call 1 (planning)    [0-450ms]
-  ↓
-Tool call: search_db     [450-1200ms]
-  ├─ Database query      [460-1180ms]
-  └─ Result parsing      [1180-1200ms]
-  ↓
-LLM call 2 (synthesis)   [1200-1850ms]
-  ↓
-Response sent            [1850ms]
-```
-
-**Good for:**
-- Finding bottlenecks
-- Understanding agent decision paths
-- Debugging complex, multi-step flows
-
-**Limitations:**
-- More complex to set up
-- Higher data volume
-
----
-
-## The Observability Stack: Tools You Should Know
-
-### Honeycomb (The Modern Pioneer)
-
-**What it is:** A modern observability platform built for high-cardinality data (lots of unique values).
-
-**Why it matters:**
-- **Built for questions, not dashboards:** Instead of pre-built charts, you ask arbitrary questions
-- **Perfect for AI agents:** Handles dynamic, unpredictable behavior
-- **High-cardinality friendly:** Can slice by any dimension (user_id, prompt_type, model_version, etc.)
-
-**Best for:**
-- Startups and scale-ups
-- Teams doing active debugging
-- AI/ML applications with lots of variability
-
-**Example use:**
-```
-"Show me all agent sessions where:
- - The user was a premium customer
- - The task took > 10 seconds
- - The agent called more than 5 tools
- - It happened in the last 24 hours"
-```
-
-Honeycomb makes this query instant, even with millions of sessions.
-
----
-
-### Other Major Players
-
-| Tool | Strength | Best For | Pricing Model |
-|------|----------|----------|---------------|
-| **Datadog** | All-in-one platform | Large enterprises, need everything | Per-host + data volume |
-| **New Relic** | APM + observability | Traditional apps + AI | Per-user + data |
-| **Grafana + Loki + Tempo** | Open source stack | Self-hosted, cost control | Free (infra costs only) |
-| **Splunk** | Log aggregation powerhouse | Legacy enterprises, compliance | Data volume (expensive) |
-| **Elastic (ELK Stack)** | Search + logs | Log-heavy workloads | Self-hosted or cloud |
-| **AWS CloudWatch** | Native AWS integration | AWS-only infrastructure | Pay per metric/log |
-| **Google Cloud Trace** | Native GCP integration | GCP-only infrastructure | Pay per trace |
-| **Sentry** | Error tracking focus | Frontend + backend errors | Per event |
-| **LangSmith** | Built specifically for LLM apps | LangChain users, AI-first | Per trace |
-
----
-
-## Observability: Not Just for AI
-
-### The Important Context
-
-**Observability is NOT an AI-specific concept.** It's been a fundamental software engineering practice for decades, long before LLMs existed. Understanding this helps you appreciate both:
-1. Why observability principles apply broadly
-2. What makes AI observability uniquely challenging
+## What Makes AI Observability Different
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ TRADITIONAL vs AI OBSERVABILITY                              │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  TRADITIONAL SOFTWARE (Pre-AI)                              │
-│  ──────────────────────────────                             │
+│  TRADITIONAL SOFTWARE                                       │
+│  ──────────────────────────                                 │
 │  Deterministic: same input → same output                   │
 │  Reproducible bugs: can replay and fix                     │
 │  Performance = speed + memory                               │
@@ -246,7 +41,7 @@ Honeycomb makes this query instant, even with millions of sessions.
 │  ✓ Tools: Prometheus, Grafana, Datadog, New Relic          │
 │  ✓ Focus: Uptime, latency, errors, throughput              │
 │                                                             │
-│  AI/LLM SYSTEMS (Now)                                       │
+│  AI/LLM SYSTEMS                                             │
 │  ──────────────                                             │
 │  Non-deterministic: same prompt ≠ same response            │
 │  Probabilistic failures: hard to reproduce                 │
@@ -259,131 +54,17 @@ Honeycomb makes this query instant, even with millions of sessions.
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Where Observability Came From
+### The New Challenges
 
-**1990s-2000s: Web Applications Emerge**
-- Engineers monitored web servers with basic tools
-- Questions: "Is my server up?" "How many requests per second?"
-- Tools: Server logs, simple scripts, Nagios
-
-**2000s-2010s: Distributed Systems Grow**
-- Microservices made debugging harder (one request → many services)
-- Questions: "Which service is slow?" "Where did the request fail?"
-- Tools: APM (Application Performance Monitoring) - New Relic, AppDynamics
-
-**2016: The Observability Movement**
-- Charity Majors & team coin "observability" at Honeycomb
-- Key insight: Modern systems are too complex for pre-defined dashboards
-- Need: Ask arbitrary questions, not just check predefined metrics
-
-**2020s: AI Adds New Dimensions**
-- LLMs introduce non-determinism and high costs
-- Questions: "Why did it generate this response?" "What's this costing us?"
-- Challenge: Same observability principles, but applied to probabilistic systems
-
-### Why You're Learning It in AI Context
-
-You're encountering observability here because:
-
-1. **AI systems are harder to observe** - Non-deterministic behavior requires better tooling
-2. **Costs matter more** - Every API call costs money, need to track it
-3. **Quality is subjective** - Not just "did it work?" but "was it good?"
-4. **It's newly critical for PMs** - Understanding agent behavior is core to product decisions
-
-**But remember:** The principles (logs, metrics, traces) apply to ALL software, not just AI.
+1. **Non-Determinism**: Same prompt, different responses
+2. **Cost Tracking**: Every API call costs money (tokens matter)
+3. **Quality Metrics**: Not just "did it work?" but "was it good?"
+4. **Decision Paths**: Which tools did the agent call and why?
+5. **Context Windows**: What information was available at each step?
 
 ---
 
-## A Brief History of Observability
-
-### The Evolution
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ OBSERVABILITY TIMELINE                                      │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  1990s: THE DARK AGES                                       │
-│  ────────────────────                                       │
-│  "Check the server logs manually"                          │
-│  Tools: grep, tail -f, print statements                     │
-│                                                             │
-│  2000s: MONITORING EMERGES                                  │
-│  ──────────────────────                                     │
-│  "Set up alerts for known failures"                        │
-│  Tools: Nagios, Zabbix                                      │
-│  Focus: Is it up or down?                                   │
-│                                                             │
-│  2010s: APM (Application Performance Monitoring)            │
-│  ────────────────────────────────────────────               │
-│  "Track request flows and performance"                     │
-│  Tools: New Relic, AppDynamics                              │
-│  Focus: How fast? Where are bottlenecks?                    │
-│                                                             │
-│  2016: OBSERVABILITY COINED                                 │
-│  ───────────────────────                                    │
-│  Charity Majors + team create Honeycomb                     │
-│  Focus: Answer ANY question about your system               │
-│  Key insight: Modern systems are too complex for            │
-│               pre-defined dashboards                        │
-│                                                             │
-│  2020s: AI-NATIVE OBSERVABILITY                             │
-│  ───────────────────────────                                │
-│  "Understand what the LLM decided and why"                 │
-│  Tools: LangSmith, Honeycomb for AI                         │
-│  Focus: Agent behavior, token usage, decision paths         │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Why the Shift Happened
-
-**Old systems (2000s):**
-- Monolithic apps
-- Predictable code paths
-- Known failure modes
-- Can pre-define all metrics
-
-**Modern systems (2020s):**
-- Microservices, serverless
-- Dynamic behavior (especially with AI)
-- Infinite possible paths
-- Can't predict what will break
-
-**AI agents (now):**
-- Non-deterministic decisions
-- External API dependencies
-- User intent varies wildly
-- Every session is unique
-
-**Traditional monitoring can't handle this.** You need observability.
-
-### The Tools Legacy
-
-Most observability tools you use for AI **existed before AI:**
-
-| Tool | Original Purpose (Year) | Now Used For AI |
-|------|------------------------|-----------------|
-| **Datadog** | APM for web apps (2010) | Track AI agent performance, costs |
-| **New Relic** | App monitoring (2008) | Monitor LLM API latency |
-| **Grafana** | Metrics visualization (2014) | Dashboard AI costs, token usage |
-| **Prometheus** | Time-series metrics (2012) | Track token usage over time |
-| **ELK Stack** | Log aggregation (2010s) | Store agent conversation logs |
-| **Honeycomb** | Modern observability (2016) | Debug AI agent decision paths |
-| **OpenTelemetry** | Standard for instrumentation (2019) | Trace AI agent workflows |
-
-**AI-specific tools (emerged 2023+):**
-- **LangSmith** - Built specifically for LangChain apps
-- **LangFuse** - Open source LLM observability
-- **Weights & Biases** - Originally for ML training, now for LLM monitoring
-- **Helicone** - LLM cost tracking and observability
-- **Braintrust** - AI product evaluation and monitoring
-
-**Key takeaway:** You're not learning a new discipline. You're learning how to apply existing observability practices to a new domain (AI).
-
----
-
-## Observability for AI Agents: What to Track
+## What to Track in AI Agents
 
 ### Essential Data Points
 
@@ -478,411 +159,308 @@ Most observability tools you use for AI **existed before AI:**
 }
 ```
 
-**With this data, you can answer:**
-- "Why did it take 27 seconds?" (See step durations)
-- "Did it call the right tools?" (See tool sequence)
-- "What did the LLM think?" (See reasoning)
-- "How much did this cost?" (See token usage)
-- "Are enterprise users slower?" (Group by user_tier)
-
----
-
-## Practical Observability Patterns
-
-### Pattern 1: The Session Trace
-
-**Goal:** See the entire agent conversation as a timeline.
-
-**Implementation:**
-```python
-import honeycomb
-
-def run_agent_session(user_id, task):
-    with honeycomb.start_trace("agent_session") as trace:
-        trace.add_field("user_id", user_id)
-        trace.add_field("task", task)
-
-        for i, step in enumerate(agent_loop(task)):
-            with trace.start_span(f"iteration_{i}"):
-                trace.add_field("thought", step.thought)
-                trace.add_field("action", step.action)
-
-                if step.tool_call:
-                    result = execute_tool(step.tool_call)
-                    trace.add_field("tool_result", result)
-```
-
-**PM View:** Click on any user session, see the full decision tree.
-
----
-
-### Pattern 2: The Cost Dashboard
-
-**Goal:** Track AI spending by feature, user tier, and time.
-
-**Metrics to track:**
-- Total tokens per day
-- Cost per session (average)
-- Cost by user tier
-- Cost by agent feature
-- Cost trends over time
-
-**PM View:** "Pro users cost us $0.12/session, Free users $0.03. Is this sustainable?"
-
----
-
-### Pattern 3: The Success Funnel
-
-**Goal:** Understand where users drop off or agents fail.
-
-**Stages:**
-1. Task received
-2. Tools called successfully
-3. LLM generated response
-4. User accepted result
-5. Task completed
-
-**PM View:** "60% of failures happen at 'tools called' step. We need better error handling."
-
----
-
-### Pattern 4: The Latency Breakdown
-
-**Goal:** Find what's slow.
-
-**Breakdown:**
-- Queue time
-- LLM call time
-- Tool execution time
-- Total agent loop time
-
-**PM View:** "Database queries take 70% of session time. We should cache common queries."
-
 ---
 
 ## Key Metrics to Monitor
 
-### Health Metrics
+### Agent Performance Metrics
 
-| Metric | What It Tells You | Good Threshold |
-|--------|-------------------|----------------|
-| **Success Rate** | % of tasks completed successfully | > 95% |
-| **P50 Latency** | Median response time | < 3s |
-| **P95 Latency** | 95th percentile response time | < 10s |
-| **Error Rate** | % of sessions that errored | < 1% |
-| **Tool Success Rate** | % of tool calls that succeed | > 98% |
+| Metric | What It Tells You | Target | Alert If |
+|--------|-------------------|--------|----------|
+| **Success Rate** | % of tasks completed successfully | > 95% | < 90% |
+| **Average Iterations** | How many steps agents take | 2-5 | > 10 |
+| **Time to First Token** | Agent responsiveness perception | < 2s | > 5s |
+| **Total Duration** | End-to-end task completion | < 30s | > 60s |
 
-### Business Metrics
-
-| Metric | What It Tells You | Why It Matters |
-|--------|-------------------|----------------|
-| **Cost per Session** | Average $ spent on LLM/tools | Budget management |
-| **Sessions per User** | Engagement level | Product stickiness |
-| **Time to Resolution** | How long tasks take | User satisfaction |
-| **Tools per Session** | Agent complexity | Efficiency indicator |
-| **Retry Rate** | How often agents retry | Reliability signal |
-
-### AI-Specific Metrics
+### Cost & Usage Metrics
 
 | Metric | What It Tells You | Why It Matters |
 |--------|-------------------|----------------|
-| **Avg Loop Iterations** | How many steps agents take | Efficiency |
-| **Tool Call Diversity** | Which tools are used most | Feature usage |
-| **Token Efficiency** | Tokens per successful task | Cost optimization |
-| **Model Mix** | Which LLMs are used | Cost vs quality trade-off |
+| **Tokens Per Session** | How "chatty" your agent is | Direct cost impact |
+| **Cost Per Successful Task** | Unit economics | Profitability |
+| **Model Distribution** | Which models are used | Cost optimization opportunities |
+| **Peak Usage Times** | When load is highest | Capacity planning |
+
+### Quality Metrics
+
+| Metric | What It Tells You | How to Measure |
+|--------|-------------------|----------------|
+| **Tool Call Accuracy** | Agent picks right tools | Manual review or user feedback |
+| **Response Relevance** | Answers match user intent | User ratings, thumbs up/down |
+| **Hallucination Rate** | Agent invents false info | Fact-checking, ground truth comparison |
+| **User Satisfaction** | Overall experience | Direct user feedback, NPS |
 
 ---
 
-## Setting Up Observability: A Practical Guide
+## AI-Specific Observability Patterns
 
-### Step 1: Choose Your Tools
+### Pattern 1: The Token Cost Dashboard
 
-**For startups/small teams:**
-- Honeycomb (traces + metrics + logs)
-- Or: Grafana + Loki + Tempo (open source)
-- Or: LangSmith (if using LangChain)
+**Purpose:** Track and optimize LLM API costs
 
-**For enterprises:**
-- Datadog or New Relic (full platform)
-- Plus: Sentry for error tracking
+**What to show:**
+```
+Total Spend: $1,247.32 (this month)
+├─ By Model
+│  ├─ GPT-4: $892.10 (71%)
+│  └─ Claude Sonnet: $355.22 (29%)
+├─ By Feature
+│  ├─ Search Agent: $678.45
+│  └─ Summary Agent: $568.87
+└─ Trend: ↑ 23% vs last month
+```
 
-**For solo developers:**
-- Start with structured logging
-- Add LangSmith or Weights & Biases
+**Key questions this answers:**
+- Which models/features cost the most?
+- Are costs growing faster than users?
+- Where can we optimize?
 
 ---
 
-### Step 2: Instrument Your Agent
+### Pattern 2: The Agent Decision Trace
 
-**Minimum viable instrumentation:**
+**Purpose:** Understand why the agent made specific decisions
+
+**What to capture:**
+```
+Session: sess_abc123
+Task: "Find cheapest hotel in Paris for March 15-20"
+
+[Iteration 1]
+Thought: "Need to search for Paris hotels in date range"
+Action: tool_call(search_hotels)
+Input: {city: "Paris", check_in: "2026-03-15", check_out: "2026-03-20"}
+Result: 47 hotels found
+Duration: 1.2s, Tokens: 234
+
+[Iteration 2]
+Thought: "Too many results, filter by price"
+Action: tool_call(filter_hotels)
+Input: {sort_by: "price_asc", limit: 10}
+Result: 10 hotels returned
+Duration: 0.3s, Tokens: 89
+
+[Iteration 3]
+Thought: "Present options to user"
+Action: final_answer
+Response: "Here are the 10 cheapest hotels..."
+Duration: 0.5s, Tokens: 156
+```
+
+**Key questions this answers:**
+- Why did the agent call these specific tools?
+- What information was available at each step?
+- Where did the agent get stuck or loop?
+
+---
+
+### Pattern 3: The Quality Monitoring Dashboard
+
+**Purpose:** Track subjective quality metrics
+
+**What to show:**
+```
+Last 24 Hours:
+├─ User Satisfaction: 4.2/5 ⭐
+├─ Thumbs Up Rate: 78%
+├─ Task Completion: 94%
+└─ Hallucination Reports: 3
+
+By Agent Type:
+├─ Search Agent: 4.5/5 ⭐
+├─ Summary Agent: 4.1/5 ⭐
+└─ Research Agent: 3.8/5 ⭐ ⚠️ (needs attention)
+```
+
+**Key questions this answers:**
+- Are users happy with agent outputs?
+- Which agents need quality improvements?
+- Is quality degrading over time?
+
+---
+
+## Practical Implementation
+
+### Quick Start: Minimal Instrumentation
+
 ```python
-def agent_session(task):
-    session_id = generate_id()
-    log_event("session_started", {
-        "session_id": session_id,
-        "task": task,
-        "timestamp": now()
-    })
+import json
+from datetime import datetime
 
-    try:
-        result = run_agent(task)
-        log_event("session_completed", {
-            "session_id": session_id,
+class ObservableAgent:
+    def __init__(self, session_id, user_id):
+        self.session_id = session_id
+        self.user_id = user_id
+        self.start_time = datetime.now()
+        self.iterations = []
+        self.total_tokens = 0
+        self.total_cost = 0.0
+
+    def log_iteration(self, iteration_num, thought, action, result, tokens, cost):
+        """Log each agent loop iteration"""
+        self.iterations.append({
+            "iteration": iteration_num,
+            "thought": thought,
+            "action": action,
             "result": result,
-            "duration_ms": elapsed_time()
+            "tokens": tokens,
+            "cost": cost,
+            "timestamp": datetime.now().isoformat()
         })
-        return result
-    except Exception as e:
-        log_event("session_failed", {
-            "session_id": session_id,
-            "error": str(e)
-        })
-        raise
+        self.total_tokens += tokens
+        self.total_cost += cost
+
+    def log_completion(self, outcome):
+        """Log final session outcome"""
+        duration = (datetime.now() - self.start_time).total_seconds()
+
+        session_data = {
+            "session_id": self.session_id,
+            "user_id": self.user_id,
+            "outcome": outcome,
+            "duration_seconds": duration,
+            "total_tokens": self.total_tokens,
+            "total_cost_usd": self.total_cost,
+            "iterations": self.iterations
+        }
+
+        # Send to observability platform
+        print(json.dumps(session_data, indent=2))
+        # In production: send_to_honeycomb(session_data)
 ```
 
-**Key principle:** Log structured data (JSON), not text.
+**Usage:**
+```python
+agent = ObservableAgent(session_id="sess_123", user_id="user_456")
 
-❌ BAD: `print("User 123 started task")`
-✅ GOOD: `log({"event": "task_started", "user_id": 123})`
+# Iteration 1
+agent.log_iteration(
+    iteration_num=1,
+    thought="Need to search for flights",
+    action="tool_call: search_flights",
+    result={"flights": 5},
+    tokens=234,
+    cost=0.012
+)
 
----
+# Iteration 2
+agent.log_iteration(
+    iteration_num=2,
+    thought="Present options to user",
+    action="final_answer",
+    result={"response": "Here are 5 flights..."},
+    tokens=89,
+    cost=0.005
+)
 
-### Step 3: Build Core Dashboards
-
-**Dashboard 1: System Health**
-- Success rate (last 24h)
-- Error rate (last 24h)
-- P50/P95 latency
-- Active sessions
-
-**Dashboard 2: Cost**
-- Total tokens (today, this week, this month)
-- Cost per session (average)
-- Cost by user tier
-- Cost trend
-
-**Dashboard 3: Agent Behavior**
-- Avg iterations per session
-- Most-used tools
-- Tool success rates
-- Common failure patterns
-
----
-
-### Step 4: Set Alerts
-
-**Critical alerts:**
-- Error rate > 5% for 5 minutes → Page on-call
-- P95 latency > 30s → Notify team
-- Success rate < 90% → Investigate
-
-**Warning alerts:**
-- Daily cost > $500 → Notify PM
-- Unusual tool failure rate → Notify eng
-- Session volume spike → Monitor capacity
-
----
-
-## Common Observability Mistakes
-
-### Mistake 1: Logging Everything
-
-**Problem:** Too much data is expensive and hard to search.
-
-**Solution:** Sample low-value events, trace all errors and slow requests.
-
----
-
-### Mistake 2: Pre-mature Dashboard Building
-
-**Problem:** You build dashboards before you know what questions matter.
-
-**Solution:** Start with ad-hoc queries, build dashboards for questions you ask repeatedly.
-
----
-
-### Mistake 3: Ignoring Cardinality
-
-**Problem:** Tagging with high-cardinality fields (like full prompts) explodes costs.
-
-**Solution:** Hash or truncate high-cardinality data, or use specialized tools like Honeycomb.
-
----
-
-### Mistake 4: No Trace IDs
-
-**Problem:** Can't connect logs across services.
-
-**Solution:** Generate a trace_id at the start of every request, pass it everywhere.
-
----
-
-### Mistake 5: Observability as an Afterthought
-
-**Problem:** Adding observability after launch is 10x harder.
-
-**Solution:** Instrument from day 1, even if you don't have fancy tools yet.
-
----
-
-## Observability Vocabulary for PMs
-
-| Term | Meaning | Example |
-|------|---------|---------|
-| **Trace** | The full journey of one request | One agent session from start to finish |
-| **Span** | A single operation within a trace | One LLM call or tool execution |
-| **Cardinality** | Number of unique values for a field | user_id has high cardinality, user_tier has low |
-| **SLI** | Service Level Indicator (what you measure) | "P95 latency" |
-| **SLO** | Service Level Objective (your goal) | "P95 latency < 5s" |
-| **SLA** | Service Level Agreement (promise to users) | "99.9% uptime" |
-| **MTTD** | Mean Time To Detect (how fast you notice issues) | "We detect outages in 2 minutes" |
-| **MTTR** | Mean Time To Resolution (how fast you fix) | "We resolve incidents in 30 minutes" |
-
----
-
-## How Traditional Observability Worked (Pre-AI)
-
-To appreciate what's different about AI observability, here's how it was done before:
-
-### Example: E-commerce Website Observability
-
-**System:** Traditional web app (Rails/Node.js + PostgreSQL + Redis)
-
-**What was tracked:**
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ TRADITIONAL WEB APP OBSERVABILITY                            │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  METRICS (Prometheus + Grafana)                             │
-│  ────────────────────────────                               │
-│  • HTTP requests per second                                 │
-│  • Response times (p50, p95, p99)                           │
-│  • Error rates (4xx, 5xx)                                   │
-│  • Database query times                                     │
-│  • Cache hit rates                                          │
-│  • CPU/Memory usage                                         │
-│                                                             │
-│  LOGS (ELK Stack)                                           │
-│  ──────────────                                             │
-│  • Application logs (Rails logger)                         │
-│  • Access logs (Nginx)                                      │
-│  • Error logs with stack traces                            │
-│  • Database slow query logs                                 │
-│                                                             │
-│  TRACES (New Relic / Datadog)                               │
-│  ──────────────────────────────                             │
-│  • Request flow: Browser → App → DB → Cache                │
-│  • Which endpoint was slow?                                 │
-│  • Which database query caused the bottleneck?              │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+# Complete
+agent.log_completion(outcome="success")
 ```
 
-**Typical debugging flow:**
-1. Alert: "Error rate spiked to 5%"
-2. Check logs: Find stack trace for errors
-3. Check traces: See which endpoint is failing
-4. Check metrics: Database queries taking 5s instead of 50ms
-5. Fix: Add database index
-6. Verify: Error rate back to 0.1%
+---
 
-**What was easy:**
-- Deterministic: Same request always fails the same way
-- Reproducible: Can test the fix locally
-- Clear metrics: Latency, errors, throughput
+## AI-Specific Tools
 
-**What was hard:**
-- Distributed systems (microservices)
-- Race conditions
-- Capacity planning
+While generic observability platforms work for AI (see [Tools Overview](../../../learn-code/observability/02-Tools-Overview.md)), some tools specialize in LLM/AI observability:
 
-### Example: Microservices Observability (2015-2020)
+| Tool | Focus | Best For |
+|------|-------|----------|
+| **LangSmith** | LangChain integration | Teams using LangChain |
+| **Braintrust** | AI product evaluation | Quality-focused teams |
+| **Arize** | ML observability | Production ML systems |
+| **Weights & Biases** | Experiment tracking | Research teams |
 
-**System:** Netflix-style architecture (100+ microservices)
-
-**New challenges:**
-- One user request → 20 service calls
-- Which service caused the slowdown?
-- How do you connect logs across services?
-
-**Solution: Distributed Tracing**
-```
-User Request (trace_id: abc123)
-  ↓
-API Gateway [50ms]
-  ↓
-Auth Service [120ms]
-  ↓
-Product Service [300ms]
-  ├─ Inventory Service [200ms] ← BOTTLENECK!
-  └─ Pricing Service [80ms]
-  ↓
-Response [550ms total]
-```
-
-**Tools used:**
-- **Zipkin / Jaeger**: Distributed tracing
-- **OpenTelemetry**: Standardized instrumentation
-- **Service mesh (Istio)**: Automatic trace propagation
-
-### What Changed with AI
-
-**Traditional system:**
-```
-User → API → Database → Response
-         ↓
-   [All deterministic]
-```
-
-**AI system:**
-```
-User → Agent Loop → LLM → Tool → LLM → Response
-         ↓          ↓      ↓      ↓
-   [Non-deterministic at every step]
-   [Costs money at each LLM call]
-   [Quality is subjective]
-```
-
-**New questions to answer:**
-- "Why did the agent choose this tool?" (decision tracking)
-- "Was the response good?" (quality evaluation)
-- "How much did this cost?" (token/cost tracking)
-- "What was in the context?" (prompt tracking)
-
-**Same principles, new dimensions.**
+**For most teams:** Start with general observability tools (Honeycomb, Datadog) and only add AI-specific tools when you need specialized features.
 
 ---
 
-## Things to Remember
+## Common AI Observability Mistakes
 
-1. **Observability existed before AI**: Developed for web apps, microservices, distributed systems
-2. **Observability ≠ Monitoring**: Monitoring checks known issues, observability debugs unknown ones
-3. **Three pillars are universal**: Logs (what happened), Metrics (how much), Traces (full journey)
-4. **Most tools predate AI**: Datadog, New Relic, Prometheus, Grafana, ELK Stack
-5. **AI adds new dimensions**: Non-determinism, quality evaluation, cost tracking, decision paths
-6. **Same principles apply**: Instrument early, trace everything, ask questions
-7. **Honeycomb pioneered modern observability**: High-cardinality, question-driven approach (2016)
-8. **PMs benefit from observability**: Understand costs, user behavior, and where to improve
-9. **Instrument early**: Adding observability after launch is much harder
-10. **Start simple**: Structured logging is better than nothing
+### Mistake 1: Not Logging Prompts and Responses
+
+**Why it's bad:** Can't debug agent decisions without seeing what the LLM actually said.
+
+**Fix:** Always log full prompts and completions (with PII redaction if needed).
 
 ---
 
-## For Deeper Learning
+### Mistake 2: Ignoring Token Costs
 
-### Books
-- **"Observability Engineering"** by Charity Majors, Liz Fong-Jones, George Miranda (the definitive guide)
+**Why it's bad:** Costs can spiral out of control quickly.
 
-### Blogs
-- Honeycomb Blog (honeycomb.io/blog)
-- Charity Majors' blog (charity.wtf)
-
-### Courses
-- Honeycomb University (free courses on observability)
-- O'Reilly: "Observability for Modern Applications"
+**Fix:** Track tokens per session, set alerts, monitor trends.
 
 ---
 
-**Next:** [../03-AI-Agents/00-Index.md](../03-AI-Agents/00-Index.md) - Or return to [00-Index.md](00-Index.md)
+### Mistake 3: Only Tracking Success/Failure
+
+**Why it's bad:** Misses quality issues (agent "succeeds" but gives bad answers).
+
+**Fix:** Add user feedback mechanisms (thumbs up/down, ratings).
+
+---
+
+### Mistake 4: No Session-Level Tracing
+
+**Why it's bad:** Can't follow agent decision paths across multiple tool calls.
+
+**Fix:** Use trace IDs to connect all events in a session.
+
+---
+
+## PM Perspective: What to Ask For
+
+As a PM, here's what you should request from your eng team:
+
+### Must-Haves
+1. **Cost dashboard** - How much are we spending? Trending up/down?
+2. **Success rate tracking** - What % of tasks complete successfully?
+3. **Quality feedback loop** - Can users rate agent responses?
+4. **Session traces** - Can we replay specific user sessions?
+
+### Nice-to-Haves
+5. Tool usage breakdown - Which tools get called most?
+6. Latency percentiles - P50, P95, P99 response times
+7. A/B test infrastructure - Compare agent versions
+
+### Questions to Ask When Things Go Wrong
+
+```
+User reports: "The agent gave me wrong info"
+
+Instead of: "Can you look into it?"
+
+Ask:
+1. "What's the session ID?" (find the exact interaction)
+2. "What did the agent's reasoning say?" (see decision path)
+3. "Which tools did it call?" (understand behavior)
+4. "Did other users hit this?" (check if it's widespread)
+5. "What's our quality metric for this agent?" (baseline)
+```
+
+---
+
+## Key Takeaways
+
+1. **AI observability builds on generic observability** - Same principles (logs, metrics, traces), new dimensions (tokens, quality, decisions)
+
+2. **Instrument at multiple levels** - Agent session, loop iteration, LLM call, tool call
+
+3. **Track costs obsessively** - Tokens = money, and costs can grow fast
+
+4. **Quality metrics matter** - Success/failure isn't enough; capture user satisfaction
+
+5. **Use generic tools first** - Honeycomb, Datadog work great; only add AI-specific tools when needed
+
+---
+
+## Next Steps
+
+- **Generic observability basics:** [Learn the fundamentals](../../../learn-code/observability/00-Index.md)
+- **Tools comparison:** [Choose your observability platform](../../../learn-code/observability/02-Tools-Overview.md)
+- **PM perspective:** [Why PMs care about observability](../../../learn-code/observability/05-For-PMs.md)
+- **Build your agent:** [Agent Architecture](01-Architecture.md)
+
+---
+
+*Remember: Observability isn't just for debugging - it's how you understand if your AI agent is actually providing value to users.*
